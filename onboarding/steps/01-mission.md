@@ -9,8 +9,11 @@ claims:
     - forum-ocp-release-oversight
     - team-art
     - forum-ocp-crt
+    - forum-ocp-testplatform
+    - forum-ocp-ert
   urls:
     - https://docs.ci.openshift.org/
+    - https://sippy.dptools.openshift.org/
   repos:
     - openshift/sippy
   tools: []
@@ -18,26 +21,32 @@ claims:
 substeps:
   - id: mission
     type: learning
+    group: what-trt-does
     summary: "Understand TRT's core mission"
 
   - id: revert-first
     type: learning
+    group: what-trt-does
     summary: "Learn the 'Revert First' principle"
 
   - id: org-structure
     type: learning
+    group: where-trt-fits
     summary: "See where TRT fits in the org"
 
   - id: sister-teams
     type: learning
+    group: where-trt-fits
     summary: "Understand sister teams and ownership boundaries"
 
   - id: roles
     type: learning
+    group: trt-internals
     summary: "Learn TRT's key roles"
 
   - id: scope
     type: learning
+    group: trt-internals
     summary: "Understand what's in and out of scope"
 
   - id: shadow-watcher
@@ -74,7 +83,7 @@ Questions Later." The default state of the release branch
 must always be green.
 
 How it works in practice:
-1. [Sippy](https://github.com/openshift/sippy) (TRT's CI
+1. [Sippy](https://sippy.dptools.openshift.org/) (TRT's CI
    analysis dashboard — you'll set this up in Step 3)
    detects a significant increase in test failures after a
    PR (pull request) merges
@@ -106,7 +115,8 @@ TRT's position in the organization:
               ├─ Errata Reliability Team (ERT)
               └─ Test Platform (DPTP)
 
-TRT's public Slack channel is #forum-ocp-release-oversight.
+TRT's public Slack channel is
+[#forum-ocp-release-oversight](https://redhat-internal.enterprise.slack.com/archives/forum-ocp-release-oversight).
 
 ---
 
@@ -118,17 +128,24 @@ TRT works closely with four sister teams within SHIP. Each
 has distinct ownership:
 
 - **ART (Automated Release Tooling)** — Builds and assembles
-  release payloads. TRT qualifies them.
-  [Slack: #team-art]
+  release payloads (the installable OCP images). TRT
+  qualifies them.
+  Slack: [#team-art](https://redhat-internal.enterprise.slack.com/archives/team-art)
+
 - **CRT (Continuous Release Tooling)** — Owns the
-  release-controller infrastructure. TRT owns the job
-  definitions within it.
-  [Slack: #forum-ocp-crt]
+  release-controller infrastructure (the system that
+  coordinates payload creation and verification). TRT owns
+  the job definitions within it.
+  Slack: [#forum-ocp-crt](https://redhat-internal.enterprise.slack.com/archives/forum-ocp-crt)
+
 - **DPTP (Test Platform)** — Provides the CI platform
   ([Prow](https://docs.ci.openshift.org/)). Does not own
   the release jobs — TRT does.
+  Slack: [#forum-ocp-testplatform](https://redhat-internal.enterprise.slack.com/archives/forum-ocp-testplatform)
+
 - **ERT (Errata Reliability Team)** — Owns the errata
   (advisory) pipeline for shipping fixes to customers.
+  Slack: [#forum-ocp-ert](https://redhat-internal.enterprise.slack.com/archives/forum-ocp-ert)
 
 You will schedule introductory meetings with these teams
 later in the onboarding process, after you have more context
@@ -195,10 +212,16 @@ everything else.
 - TRT public channel: #forum-ocp-release-oversight
   (verified: 2026-06-03)
 - Org: SHIP under Hybrid Platforms (verified: 2026-06-03)
+- Sippy dashboard: https://sippy.dptools.openshift.org/
+  (verified: 2026-06-03)
 - Sippy repo: https://github.com/openshift/sippy
   (verified: 2026-06-03)
 - Prow docs: https://docs.ci.openshift.org/
   (verified: 2026-06-03)
+- ART channel: #team-art (verified: 2026-06-03)
+- CRT channel: #forum-ocp-crt (verified: 2026-06-03)
+- DPTP channel: #forum-ocp-testplatform (verified: 2026-06-03)
+- ERT channel: #forum-ocp-ert (verified: 2026-06-03)
 
 ## Feedback
 
