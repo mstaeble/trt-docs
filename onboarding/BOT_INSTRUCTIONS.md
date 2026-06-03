@@ -16,16 +16,22 @@ automatically from this file.
 ## Running a Step
 
 1. Read the step file indicated by `manifest.yaml`
-2. Present each substep one at a time in order
-3. For each substep:
-   - **learning**: Show the Context section. Wait for the
-     user to confirm they've read it before advancing.
-   - **action**: Show the Action section. Wait for the
-     user to confirm they've completed it before advancing.
-   - **verification**: Show the checklist. Ask the user to
-     confirm each item.
-4. Show progress as "substep N of M" so the user knows
-   where they are
+2. Group consecutive **learning** substeps together and
+   present them in a single message with clear headings.
+   Do not wait for confirmation between learning substeps
+   — the user is just reading.
+3. Pause only at:
+   - **action** substeps: present the task and wait for
+     the user to confirm they've completed it before
+     advancing.
+   - **verification** substeps: present the checklist and
+     ask the user to confirm each item.
+4. Show a transition prompt between learning and action
+   sections so the user knows when to start doing things.
+5. When presenting learning content, expand acronyms and
+   briefly explain tool/service names on first mention.
+   For tools covered in later steps, add a forward
+   reference (e.g. "covered in Step 3").
 
 ## After All Substeps
 
