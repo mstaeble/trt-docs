@@ -7,8 +7,12 @@ audience: new-hire
 claims:
   channels:
     - forum-ocp-release-oversight
-  urls: []
-  repos: []
+    - team-art
+    - forum-ocp-crt
+  urls:
+    - https://docs.ci.openshift.org/
+  repos:
+    - openshift/sippy
   tools: []
 
 substeps:
@@ -36,24 +40,28 @@ substeps:
     type: learning
     summary: "Understand what's in and out of scope"
 
-  - id: meet-and-greets
+  - id: shadow-watcher
     type: action
-    summary: "Schedule introductions"
+    summary: "Arrange to shadow a watcher rotation"
 ---
 
 ## Substep: mission
 
 ### Context
 
-TRT acts as SRE for the OpenShift release pipeline. The
-team's primary goal is ensuring the highest sustainable rate
-of development across all of OpenShift.
+TRT acts as SRE (Site Reliability Engineering) for the
+OpenShift release pipeline. The team's primary goal is
+ensuring the highest sustainable rate of development across
+all of OCP (OpenShift Container Platform).
 
 Core responsibilities:
 - Qualifying every OCP release
-- Continuously monitoring CI signals for go/no-go decisions
+- Continuously monitoring CI (Continuous Integration)
+  signals for go/no-go decisions
 - Owning end-to-end (e2e) test job definitions
-- Managing CI/CD pipelines via Prow
+- Managing CI/CD pipelines via
+  [Prow](https://docs.ci.openshift.org/) (the
+  Kubernetes-based CI system used by OpenShift)
 
 ---
 
@@ -66,10 +74,12 @@ Questions Later." The default state of the release branch
 must always be green.
 
 How it works in practice:
-1. Sippy detects a significant increase in test failures
-   after a PR merges
-2. An alert is filed, tagging the component team, PR author,
-   and TRT
+1. [Sippy](https://github.com/openshift/sippy) (TRT's CI
+   analysis dashboard — you'll set this up in Step 3)
+   detects a significant increase in test failures after a
+   PR (pull request) merges
+2. An alert is filed, tagging the component team, PR
+   author, and TRT
 3. TRT's primary action: revert the offending PR to unblock
    the pipeline
 4. The component team then works on a "fix forward" PR that
@@ -80,13 +90,13 @@ pipeline healthy for all teams. The revert buys time for the
 component team to fix the issue properly.
 
 ---
+
 ## Substep: org-structure
 
 ### Context
 
 TRT's position in the organization:
 
-```
     Hybrid Platforms (org)
       └─ Multi-product and Engineering Experience (org)
           └─ SHIP (team group)
@@ -95,11 +105,11 @@ TRT's position in the organization:
               ├─ Continuous Release Tooling (CRT)
               ├─ Errata Reliability Team (ERT)
               └─ Test Platform (DPTP)
-```
 
 TRT's public Slack channel is #forum-ocp-release-oversight.
 
 ---
+
 ## Substep: sister-teams
 
 ### Context
@@ -109,13 +119,20 @@ has distinct ownership:
 
 - **ART (Automated Release Tooling)** — Builds and assembles
   release payloads. TRT qualifies them.
+  [Slack: #team-art]
 - **CRT (Continuous Release Tooling)** — Owns the
   release-controller infrastructure. TRT owns the job
   definitions within it.
-- **DPTP (Test Platform)** — Provides the CI platform (Prow).
-  Does not own the release jobs — TRT does.
+  [Slack: #forum-ocp-crt]
+- **DPTP (Test Platform)** — Provides the CI platform
+  ([Prow](https://docs.ci.openshift.org/)). Does not own
+  the release jobs — TRT does.
 - **ERT (Errata Reliability Team)** — Owns the errata
-  pipeline for shipping advisories.
+  (advisory) pipeline for shipping fixes to customers.
+
+You will schedule introductory meetings with these teams
+later in the onboarding process, after you have more context
+on TRT's tools and workflows.
 
 ---
 
@@ -132,10 +149,11 @@ Step 6.
 
 **Patch Manager** — Rotated among staff engineers, focused
 on timely patch releases for older supported versions and
-ensuring z-stream nightlies are produced reliably.
+ensuring z-stream (patch) nightlies are produced reliably.
 
 The long-term goal is for component teams to self-monitor
-via Component Readiness, with TRT providing oversight.
+via Component Readiness (a regression detection system —
+covered in Step 7), with TRT providing oversight.
 
 ---
 
@@ -146,26 +164,29 @@ via Component Readiness, with TRT providing oversight.
 TRT is focused on the current development branch (e.g.
 4.dev/master), not older supported releases. Anything
 older than the current dev branch is handled by the patch
-manager after GA.
+manager after GA (General Availability — when a release
+ships to customers).
 
 The handoff from TRT to the patch manager occurs at GA.
 
 ---
 
-## Substep: meet-and-greets
+## Substep: shadow-watcher
 
 ### Action
 
-Schedule introductory meetings with:
+Arrange to shadow a watcher rotation:
 
-- [ ] Your TRT manager — align on 30/60/90-day goals
-- [ ] Current TRT watchers — arrange to shadow a rotation
-- [ ] An ART contact — understand how payloads are built
-- [ ] A CRT contact — understand the release-controller
-- [ ] A DPTP contact — understand the CI platform
+- [ ] Ask your manager or buddy who the current TRT
+      watchers are
+- [ ] Reach out to a current watcher and arrange to
+      shadow their next rotation
 
-Ask your manager or buddy who the right contacts are for
-each.
+This is the single most valuable thing you can do in your
+first week. Watching a watcher work gives you context that
+no document can provide. The watcher role is covered in
+detail in Step 6, but observing it early accelerates
+everything else.
 
 ---
 
@@ -174,6 +195,10 @@ each.
 - TRT public channel: #forum-ocp-release-oversight
   (verified: 2026-06-03)
 - Org: SHIP under Hybrid Platforms (verified: 2026-06-03)
+- Sippy repo: https://github.com/openshift/sippy
+  (verified: 2026-06-03)
+- Prow docs: https://docs.ci.openshift.org/
+  (verified: 2026-06-03)
 
 ## Feedback
 
