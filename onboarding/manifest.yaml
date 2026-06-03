@@ -1,0 +1,73 @@
+steps:
+  - id: 00-pre-review
+    title: Pre-Onboarding Review (AI)
+    file: steps/00-pre-review.md
+    audience: buddy
+    description: >
+      AI-driven audit of the onboarding guide for drift and
+      gaps. Run by the onboarding buddy before the new hire
+      starts.
+
+  - id: 01-mission
+    title: TRT Mission & Team Structure
+    file: steps/01-mission.md
+    audience: new-hire
+    description: >
+      Mission, org structure, core principles, roles, and
+      sister teams.
+
+  - id: 02-slack-channels
+    title: Slack Channels & Communication
+    file: steps/02-slack-channels.md
+    audience: new-hire
+    description: >
+      Channels to join, what each is for, and channel norms.
+
+  - id: 03-dashboards
+    title: Dashboards & URLs
+    file: steps/03-dashboards.md
+    audience: new-hire
+    description: >
+      Sippy, Prow, Release Controller, and other daily tools.
+
+  - id: 04-repositories
+    title: Repositories & Codebase Orientation
+    file: steps/04-repositories.md
+    audience: new-hire
+    description: >
+      Key repos, what TRT owns, and where to look.
+
+  - id: 05-tools-setup
+    title: Tools & CLI Setup
+    file: steps/05-tools-setup.md
+    audience: new-hire
+    description: >
+      CLI tools, access requests, and workstation setup.
+
+  - id: 06-watcher-role
+    title: The Watcher Role
+    file: steps/06-watcher-role.md
+    audience: new-hire
+    description: >
+      What you monitor, how, when, and what actions to take.
+
+  - id: 07-processes
+    title: Key Processes & Workflows
+    file: steps/07-processes.md
+    audience: new-hire
+    description: >
+      Revert flow, Component Readiness, release cycle milestones.
+
+  - id: 08-reading-list
+    title: Essential Reading & Documentation
+    file: steps/08-reading-list.md
+    audience: new-hire
+    description: >
+      Prioritized reading list of docs, guides, and references.
+
+  - id: 09-thirty-day-goals
+    title: 30-Day Goals
+    file: steps/09-thirty-day-goals.md
+    audience: new-hire
+    description: >
+      Concrete milestones for the first month.
