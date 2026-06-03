@@ -27,8 +27,18 @@ See [onboarding/CONTRIBUTING.md](onboarding/CONTRIBUTING.md)
 for details on how to report problems and contribute
 improvements.
 
-**To start onboarding**, see the prompt in
-[onboarding/steps/01-mission.md](onboarding/steps/01-mission.md).
+**To start onboarding:**
+
+1. Open a Chai Bot DM in Slack (click "Chai Bot" in your
+   apps, then go to the "Messages" tab)
+2. Start a new thread and paste:
+
+> Start TRT onboarding from the repo mstaeble/trt-docs
+
+The bot will clone this repo, read the bot instructions and
+step files, and guide you through the process one substep at
+a time. When you complete a step, the bot will give you the
+prompt to paste in a new thread for the next step.
 
 ### Future Content
 
