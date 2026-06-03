@@ -16,22 +16,29 @@ automatically from this file.
 ## Running a Step
 
 1. Read the step file indicated by `manifest.yaml`
-2. Group consecutive **learning** substeps together and
-   present them in a single message with clear headings.
-   Do not wait for confirmation between learning substeps
-   — the user is just reading.
-3. Pause only at:
+2. Group learning substeps by their `group` field in the
+   front matter. Present all substeps in the same group
+   together in a single message with clear headings.
+   If no `group` field is set, group consecutive learning
+   substeps together.
+   Each group should be small — 2-3 related topics that
+   fit comfortably on screen without scrolling.
+3. After each learning group, pause briefly with a
+   "Ready to continue?" prompt before showing the next
+   group. This gives the user time to digest without
+   making them wait through a full processing cycle.
+4. Pause fully at:
    - **action** substeps: present the task and wait for
      the user to confirm they've completed it before
      advancing.
    - **verification** substeps: present the checklist and
      ask the user to confirm each item.
-4. Show a transition prompt between learning and action
-   sections so the user knows when to start doing things.
 5. When presenting learning content, expand acronyms and
    briefly explain tool/service names on first mention.
    For tools covered in later steps, add a forward
    reference (e.g. "covered in Step 3").
+6. Render markdown links as clickable links so the user
+   can explore further if they want to.
 
 ## After All Substeps
 
