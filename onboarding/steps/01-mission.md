@@ -14,6 +14,8 @@ claims:
   urls:
     - https://docs.ci.openshift.org/
     - https://sippy.dptools.openshift.org/
+    - https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit?tab=t.0#heading=h.yg3sfsodg686
+    - https://docs.google.com/spreadsheets/d/1SysVHL12nRsRZq6su9puh7wNGtKM4ggj1uprTD4srUU/edit?gid=1723723419#gid=1723723419
   repos:
     - openshift/sippy
   tools: []
@@ -194,10 +196,20 @@ The handoff from TRT to the patch manager occurs at GA.
 
 Arrange to shadow a watcher rotation:
 
-- [ ] Ask your manager or buddy who the current TRT
-      watchers are
+- [ ] Find out who the current watcher is. You can:
+      - Type `@team-technical-release` in any Slack message
+        compose box (without sending) to see who is
+        currently in the watcher alias
+      - Check the
+        [watcher rotation spreadsheet](https://docs.google.com/spreadsheets/d/1SysVHL12nRsRZq6su9puh7wNGtKM4ggj1uprTD4srUU/edit?gid=1723723419#gid=1723723419)
+      - Ask in #forum-release-oversight-staff
 - [ ] Reach out to a current watcher and arrange to
       shadow their next rotation
+
+The [watcher rotation doc](https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit?tab=t.0#heading=h.yg3sfsodg686)
+describes how the rotation is managed. The schedule is
+biweekly and adjustments (PTO, swaps) are coordinated in
+#forum-release-oversight-staff.
 
 This is the single most valuable thing you can do in your
 first week. Watching a watcher work gives you context that
@@ -222,6 +234,12 @@ everything else.
 - CRT channel: #forum-ocp-crt (verified: 2026-06-03)
 - DPTP channel: #forum-ocp-testplatform (verified: 2026-06-03)
 - ERT channel: #forum-ocp-ert (verified: 2026-06-03)
+- Watcher rotation doc: https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit
+  (verified: 2026-06-04)
+- Watcher rotation spreadsheet: https://docs.google.com/spreadsheets/d/1SysVHL12nRsRZq6su9puh7wNGtKM4ggj1uprTD4srUU/edit
+  (verified: 2026-06-04)
+- Watcher Slack alias: @team-technical-release
+  (verified: 2026-06-04)
 
 ## Feedback
 
