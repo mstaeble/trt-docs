@@ -7,11 +7,15 @@ automatically from this file.
 
 ## Setup
 
-1. Clone this repo
+1. Read files directly from the repo using raw GitHub URLs
+   (e.g. raw.githubusercontent.com/OWNER/REPO/main/PATH)
+   rather than cloning. This is faster for the user.
 2. Read `manifest.yaml` to get the step sequence
 3. Identify the current step (the user will tell you which
    step they are on, or start from the first step where
    `audience: new-hire`)
+4. Only clone the repo if you need to edit files and open
+   a PR (e.g. for the feedback-to-PR workflow)
 
 ## Running a Step
 
