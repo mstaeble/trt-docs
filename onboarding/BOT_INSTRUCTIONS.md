@@ -23,16 +23,23 @@ automatically from this file.
    substeps together.
    Each group should be small — 2-3 related topics that
    fit comfortably on screen without scrolling.
-3. After each learning group, pause briefly with a
-   "Ready to continue?" prompt before showing the next
-   group. This gives the user time to digest without
-   making them wait through a full processing cycle.
-4. Pause fully at:
+3. After each learning group, pause with a button (see
+   Advancing Between Substeps below) before showing the
+   next group.
+4. Pause at:
    - **action** substeps: present the task and wait for
-     the user to confirm they've completed it before
-     advancing.
+     the user to confirm via button before advancing.
    - **verification** substeps: present the checklist and
-     ask the user to confirm each item.
+     wait for the user to confirm via button.
+
+## Advancing Between Substeps
+
+Always use buttons to let the user advance. Do not ask
+"Ready to continue?" or similar as plain text.
+
+- After **learning** substeps/groups: [Continue]
+- After **action** substeps: [Done] [I need help with this]
+- After **verification** substeps: [All confirmed]
 5. When presenting learning content, expand acronyms and
    briefly explain tool/service names on first mention.
    For tools covered in later steps, add a forward
