@@ -49,7 +49,10 @@ structure when editing:
   during pre-review
 - **Feedback section** — always keep this at the bottom so
   new hires know how to report problems
-- **Next Step** — the handoff prompt for the following step
+
+Note: Step files do not contain a "Next Step" section. The
+bot generates the next step prompt automatically from
+manifest.yaml (see BOT_INSTRUCTIONS.md).
 
 ## What Makes a Good Edit
 

@@ -247,15 +247,3 @@ If anything in this step was wrong, missing, or confusing,
 tell the bot:
 
 > "Fix onboarding: [describe the problem]"
-
-## Next Step
-
-Start a new chat thread and paste:
-
-> I'm onboarding to TRT. I've completed Step 1 (Mission &
-> Team Structure). Please guide me through Step 2: Slack
-> Channels & Communication. Research the current Slack
-> channels a TRT engineer should join or monitor, what each
-> is used for, and any channel conventions. Present each
-> channel or group of channels as a separate substep — one
-> action at a time.

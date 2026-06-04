@@ -47,8 +47,27 @@ automatically from this file.
    repos exist)
 2. Report any discrepancies and offer to help fix them
 3. Post the reference card (see below)
-4. Present the Next Step section so the user knows what to
-   paste in a new thread
+4. Present the next step prompt (see Step Completion below)
+
+## Step Completion
+
+After the reference card is posted:
+
+1. Look up the next step in manifest.yaml based on the
+   current step's order value
+2. If there is a next step, tell the user:
+
+   "You've completed [current step title]. To continue,
+   start a new chat thread and paste:
+
+   > Start TRT onboarding Step [N] from the repo [repo name]"
+
+   Where [N] is the next step's order number and [repo name]
+   is the repository the bot cloned at the start of this
+   session.
+
+3. If there is no next step (final step), congratulate the
+   user on completing onboarding
 
 ## Reference Card
 
