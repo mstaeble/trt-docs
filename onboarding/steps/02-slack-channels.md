@@ -170,8 +170,8 @@ repo.
 a `reporter_config` section that sends failure/error
 notifications directly to a designated Slack channel when
 a job fails. See the
-[MCO alert config](https://github.com/openshift/release/blob/master/ci-operator/config/openshift/machine-config-operator/.config.prowgen)
-for a working example.
+[CI docs: Slack Alerts](https://docs.ci.openshift.org/docs/how-tos/notification/)
+for configuration details and examples.
 
 **#trt-alert** — The general-purpose alert channel. It
 receives broad alerts and also serves as a testing ground
