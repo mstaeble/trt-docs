@@ -38,14 +38,23 @@ Start a Chai Bot DM thread and paste:
 > 2. Verify each claim against live state — check that
 >    channels exist, URLs are reachable, repos exist, and
 >    tools are available
-> 3. Check the Known References section for any verified
+> 3. Verify the accuracy of all substep content by
+>    researching each topic against current data sources
+>    (Slack conversations, Jira, GitHub, org data). This
+>    is the only time research is performed — during the
+>    onboarding steps themselves, content is presented
+>    as written without additional research, so it must
+>    be accurate before the new hire starts.
+> 4. Check the Known References section for any verified
 >    dates older than 90 days
-> 4. Search recent TRT Slack threads, Jira tickets, and
+> 5. Search recent TRT Slack threads, Jira tickets, and
 >    GitHub activity for topics not covered in any step file
 >
-> Produce a report with three sections:
-> - ✅ Verified — claims that match live state
-> - ⚠️ Drift — claims that no longer match
+> Produce a report with four sections:
+> - ✅ Verified — claims and content that match live state
+> - ⚠️ Drift — claims or content that no longer match
+> - 📝 Stale — Known References with verified dates older
+>   than 90 days
 > - 🆕 Gaps — topics active in TRT's recent work but absent
 >   from the guide
 >
