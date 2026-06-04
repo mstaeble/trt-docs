@@ -108,7 +108,10 @@ rather than having to search for it manually.
 
 Apply this everywhere channels appear: in substep content,
 in action checklists, in the reference card, and in
-verification checklists.
+verification checklists. This includes channels mentioned
+in example lists (e.g. component-specific alert channels)
+— resolve every #channel-name reference to a clickable
+link.
 
 ## Performance
 

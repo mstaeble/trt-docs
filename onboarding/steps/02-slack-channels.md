@@ -16,7 +16,9 @@ claims:
     - announce-testplatform
     - forum-ocp-release
   urls: []
-  repos: []
+  repos:
+    - openshift/continuous-release-jobs
+    - openshift/release
   tools: []
 
 substeps:
@@ -160,13 +162,16 @@ CI analysis dashboard) metrics and fires alerts when pass
 rates drop below configured thresholds or Component
 Readiness turns red. Alertmanager routes these alerts to
 the appropriate Slack channel based on label matchers.
-The routing config lives in the `continuous-release-jobs`
+The routing config lives in the
+[continuous-release-jobs](https://github.com/openshift/continuous-release-jobs)
 repo.
 
 **Prow reporter config** — Prow job definitions can include
 a `reporter_config` section that sends failure/error
 notifications directly to a designated Slack channel when
-a job fails.
+a job fails. See the
+[MCO alert config](https://github.com/openshift/release/blob/master/ci-operator/config/openshift/machine-config-operator/.config.prowgen)
+for a working example.
 
 **#trt-alert** — The general-purpose alert channel. It
 receives broad alerts and also serves as a testing ground
