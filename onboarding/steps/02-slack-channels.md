@@ -151,8 +151,11 @@ the release-controller that orchestrates payload creation
 and verification. Follow this channel for release pipeline
 discussions.
 
-You don't need to read every message in these channels —
-skim them once a day to build context.
+You don't need to read every message in these channels.
+Use Slack's "Summarize Channel" feature to get an AI
+summary of recent activity. Check these summaries once a
+day to build context on what the sister teams are working
+on.
 
 ---
 
