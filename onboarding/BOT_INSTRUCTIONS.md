@@ -46,8 +46,27 @@ automatically from this file.
    live data (verify URLs are reachable, channels exist,
    repos exist)
 2. Report any discrepancies and offer to help fix them
-3. Present the Next Step section so the user knows what to
+3. Post the reference card (see below)
+4. Present the Next Step section so the user knows what to
    paste in a new thread
+
+## Reference Card
+
+At the end of each step, after all substeps are complete
+and before presenting the Next Step prompt, post a
+separate message with a cleanly formatted reference card
+containing all key items from the step:
+
+- URLs as clickable links
+- Slack channels formatted as: "Search for `channel-name`
+  in Slack's channel browser"
+- Slack aliases formatted as: "Type `@alias-name` in any
+  message to reach [description]"
+- Repos as clickable GitHub links
+
+End the reference card with:
+"Save this message (bookmark icon) for quick reference.
+The canonical version lives in the step file."
 
 ## Handling Feedback
 
