@@ -170,14 +170,27 @@ skim them once a day to build context.
 
 ### Context
 
-TRT operates an automated alert system via trt-alert-bot
-that monitors CI job pass rates (via Sippy, TRT's CI
-analysis dashboard) and Component Readiness status. When
-pass rates drop below configured thresholds or a
-component's readiness turns red, the bot posts alerts to
-designated Slack channels.
+TRT operates an automated alerting system that monitors
+CI job pass rates and Component Readiness status. This is
+not a single bot — it's built from two mechanisms:
 
-Key alert channels to know about:
+**Alertmanager routing** — Prometheus monitors Sippy (TRT's
+CI analysis dashboard) metrics and fires alerts when pass
+rates drop below configured thresholds or Component
+Readiness turns red. Alertmanager routes these alerts to
+the appropriate Slack channel based on label matchers.
+The routing config lives in the `continuous-release-jobs`
+repo.
+
+**Prow reporter config** — Prow job definitions can include
+a `reporter_config` section that sends failure/error
+notifications directly to a designated Slack channel when
+a job fails.
+
+**#trt-alert** — The general-purpose alert channel. It
+receives broad alerts and also serves as a testing ground
+for new alert rules before they get routed to
+component-specific channels.
 
 **#control-plane-cr** — Consolidates Component Readiness
 alerts for core control plane components (kube-apiserver,
@@ -185,11 +198,16 @@ etcd, schedulers). Important for monitoring core platform
 stability.
 
 **Component-specific alert channels** — Teams can request
-TRT alerts for their components. Examples include
-#trt-alert-mco (Machine Config Operator),
-#forum-ocp-catalogs-program (OLM/OperatorHub), and
-#multiarch-ci-alerts (non-amd64 architectures). You'll
-encounter these as you triage issues.
+their own dedicated alert channel so they only see alerts
+relevant to their component. Examples:
+- #trt-alert-mco — Machine Config Operator alerts
+- #forum-ocp-catalogs-program — OLM/OperatorHub alerts
+- #multiarch-ci-alerts — non-amd64 architecture alerts
+
+The difference between #trt-alert and a component-specific
+channel like #trt-alert-mco: #trt-alert gets everything,
+while #trt-alert-mco only gets MCO-specific alerts. Teams
+request their own channel by opening a TRT Jira ticket.
 
 You don't need to join every alert channel. As you settle
 into the watcher role (Step 6), you'll learn which ones
