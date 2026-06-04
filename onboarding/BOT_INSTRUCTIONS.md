@@ -77,8 +77,8 @@ separate message with a cleanly formatted reference card
 containing all key items from the step:
 
 - URLs as clickable links
-- Slack channels formatted as: "Search for `channel-name`
-  in Slack's channel browser"
+- Slack channels as clickable channel links (resolved from
+  channel name to channel ID at runtime)
 - Slack aliases formatted as: "Type `@alias-name` in any
   message to reach [description]"
 - Repos as clickable GitHub links
@@ -86,6 +86,18 @@ containing all key items from the step:
 End the reference card with:
 "Save this message (bookmark icon) for quick reference.
 The canonical version lives in the step file."
+
+## Presenting Slack Channels
+
+When a step file references Slack channels, resolve each
+channel name to a clickable Slack channel link before
+presenting it to the user. This allows the user to click
+the channel name to navigate directly to it and join,
+rather than having to search for it manually.
+
+Apply this everywhere channels appear: in substep content,
+in action checklists, in the reference card, and in
+verification checklists.
 
 ## Handling Feedback
 
