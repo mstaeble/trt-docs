@@ -21,10 +21,6 @@ claims:
 
 substeps:
   - id: core-channels
-    type: learning
-    summary: "Learn about TRT's core channels"
-
-  - id: join-core
     type: action
     summary: "Join TRT's core channels"
 
@@ -33,20 +29,12 @@ substeps:
     summary: "Understand team communication norms"
 
   - id: sister-team-channels
-    type: learning
-    summary: "Learn about sister team channels"
-
-  - id: join-sister
     type: action
     summary: "Join sister team channels"
 
   - id: alert-system
-    type: learning
-    summary: "Understand TRT's alert system"
-
-  - id: join-alerts
     type: action
-    summary: "Join key alert channels"
+    summary: "Understand and join alert channels"
 
   - id: awareness-channels
     type: learning
@@ -86,18 +74,12 @@ TRT receives critical automated notifications about
 payload regressions, nightly build delays, and other
 release-blocking events that need immediate attention.
 
----
-
-## Substep: join-core
-
 ### Action
 
-- [ ] Join #forum-ocp-release-oversight — search for it in
-      Slack's channel browser
+- [ ] Join #forum-ocp-release-oversight
 - [ ] Ask your buddy or manager to add you to
       #forum-release-oversight-staff (private channel)
-- [ ] Join #trt-alert — search for it in Slack's channel
-      browser
+- [ ] Join #trt-alert
 
 ---
 
@@ -157,10 +139,6 @@ summary of recent activity. Check these summaries once a
 day to build context on what the sister teams are working
 on.
 
----
-
-## Substep: join-sister
-
 ### Action
 
 - [ ] Join #forum-ocp-art
@@ -215,10 +193,6 @@ request their own channel by opening a TRT Jira ticket.
 You don't need to join every alert channel. As you settle
 into the watcher role (Step 6), you'll learn which ones
 are most relevant to your triage work.
-
----
-
-## Substep: join-alerts
 
 ### Action
 

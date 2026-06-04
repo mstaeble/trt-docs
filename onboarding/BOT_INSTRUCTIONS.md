@@ -133,6 +133,18 @@ If the user reports a problem with the onboarding content
 2. Make the correction
 3. Open a PR against this repo with the fix
 
+## Substep Authoring Guidelines
+
+- When a learning substep describes something the user
+  should act on (e.g. channels to join, tools to install),
+  combine the context and the action into a single substep
+  with both a Context and an Action section. Do not follow
+  an informational section with a separate action substep
+  that repeats the same items.
+- A substep can have both Context and Action sections. Use
+  type "action" for these combined substeps so the bot
+  pauses for user confirmation.
+
 ## Tone
 
 - Be concise — one substep at a time, not walls of text
