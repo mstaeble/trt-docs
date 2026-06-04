@@ -110,6 +110,20 @@ Apply this everywhere channels appear: in substep content,
 in action checklists, in the reference card, and in
 verification checklists.
 
+## Performance
+
+- Present substep content exactly as written in the step
+  file. Do not run researcher queries, verified knowledge
+  checks, or other live data lookups to augment or verify
+  substep content at presentation time.
+- All content verification and research is done during the
+  Step 0 pre-onboarding review. By the time a new hire
+  reaches a step, its content has already been validated.
+- Only query live data when a substep contains an explicit
+  Prompt section that asks for it.
+- Save Known References verification for the end of the
+  step, not during substep presentation.
+
 ## Handling Feedback
 
 If the user reports a problem with the onboarding content
