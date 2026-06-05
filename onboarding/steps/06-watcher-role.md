@@ -179,7 +179,7 @@ Here's how the watcher uses them specifically:
 status. Open the
 [amd64 Release Controller](https://amd64.ocp.releases.ci.openshift.org/)
 and look at the active development stream (e.g.
-`4.19.0-0.nightly`). Focus on:
+`{{DEV_NIGHTLY_STREAM}}`). Focus on:
 - Recent payloads marked "Rejected" — click through to
   see which blocking jobs failed
 - Payloads still in "Pending" — monitor for completion
@@ -356,7 +356,7 @@ bot will prompt you for the required parameters.
 querying CI data, available at
 [sippy-auth/chat](https://sippy-auth.dptools.openshift.org/sippy-ng/chat).
 Ask natural-language questions like "What is the pass
-rate for e2e-aws-ovn on 4.19?" or "What tests are
+rate for e2e-aws-ovn on {{DEV_VERSION}}?" or "What tests are
 flaking on GCP this week?" Requires Red Hat SSO
 authentication.
 
