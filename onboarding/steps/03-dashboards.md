@@ -16,7 +16,7 @@ claims:
     - https://grafana-loki.ci.openshift.org/dashboards/f/4X8Jfhs4z/openshift-ci-observability
     - https://ship-status.ci.openshift.org/
     - https://docs.ci.openshift.org/
-    - https://redhat.atlassian.net/
+    - https://redhat.atlassian.net/jira/for-you
     - https://redhat.atlassian.net/projects/TRT/
     - https://redhat.atlassian.net/projects/OCPBUGS/
   repos: []
@@ -246,11 +246,19 @@ an infrastructure outage rather than a test regression.
 ### Context
 
 TRT tracks work and CI regressions in
-[Jira](https://redhat.atlassian.net/). Jira requires
-Red Hat SSO, and the TRT project additionally requires
-the `openshift-technical-release-team` Rover group you
-verified in Step 2. If you can't access the TRT project,
-revisit Step 2's access verification.
+[Jira](https://redhat.atlassian.net/jira/for-you). Jira
+requires Red Hat SSO, and the TRT project additionally
+requires the `openshift-technical-release-team` Rover
+group you verified in Step 2. If you can't access the TRT
+project, revisit Step 2's access verification.
+
+> **Jira access tip:** If you get errors navigating
+> directly to a Jira project URL, go to the
+> [Jira home page](https://redhat.atlassian.net/jira/for-you)
+> first to establish your session, then navigate to the
+> project. This is a
+> [known issue](https://redhat.atlassian.net/browse/RH1-7382)
+> that affects first-navigation-of-the-day.
 
 The two projects you'll use most:
 
@@ -329,7 +337,9 @@ A suggested folder structure:
   (verified: 2026-06-05)
 - SHIP Status: https://ship-status.ci.openshift.org/
   (verified: 2026-06-05)
-- Jira: https://redhat.atlassian.net/
+- Jira home: https://redhat.atlassian.net/jira/for-you
+  (verified: 2026-06-05)
+- Jira access issue: https://redhat.atlassian.net/browse/RH1-7382
   (verified: 2026-06-05)
 - Jira TRT project: https://redhat.atlassian.net/projects/TRT/
   (verified: 2026-06-05)
