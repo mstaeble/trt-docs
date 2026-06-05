@@ -143,7 +143,7 @@ Release controller configuration. This is where blocking
 each release stream. This is a core TRT-owned area.
 
 **`clusters/`** — Kubernetes manifests for the CI
-clusters themselves (app.ci, build farms). TRT has its
+clusters themselves (`app.ci`, build farms). TRT has its
 own directory at `clusters/app.ci/trt/`.
 
 For a full guide to the repo structure, see the
@@ -184,7 +184,7 @@ don't have a more specific owner.
 
 **TRT cluster resources** — `clusters/app.ci/trt/` —
 RBAC (Role-Based Access Control) configurations for
-TRT's service accounts and permissions on the app.ci
+TRT's service accounts and permissions on the `app.ci`
 cluster.
 
 As you settle into the role, you'll also review changes
