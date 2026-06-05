@@ -137,7 +137,7 @@ reference with the `-a` flag in `oc` commands:
 ```
 oc adm release extract -a ~/pull-secret.json \
   --command=openshift-install \
-  --from=quay.io/openshift-release-dev/ocp-release:4.18.0-x86_64
+  --from=quay.io/openshift-release-dev/ocp-release:{{GA_RELEASE}}-x86_64
 ```
 
 ### Action
@@ -163,7 +163,7 @@ from the command line.
 
 **`oc adm release info`** inspects a release payload's
 contents and metadata. It requires a **full image
-pullspec** — bare version tags like `4.18.0` don't
+pullspec** — bare version tags like `{{GA_RELEASE}}` don't
 resolve unless you're logged in to a cluster that knows
 about that release. The full pullspec is unambiguous and
 always works.
@@ -171,7 +171,7 @@ always works.
 GA release images live at:
 `quay.io/openshift-release-dev/ocp-release:<version>-<arch>`
 
-where `<version>` matches an OCP release (e.g. `4.18.0`)
+where `<version>` matches an OCP release (e.g. `{{GA_RELEASE}}`)
 and `<arch>` is `x86_64`, `aarch64`, etc. A convenient
 version to start with is your installed `oc` client
 version:
@@ -358,7 +358,7 @@ trigger verification jobs directly from a PR comment.
 Example — run all blocking nightly verification jobs with
 your PR's changes:
 ```
-/payload 4.19 nightly blocking
+/payload {{DEV_VERSION}} nightly blocking
 ```
 
 This builds a payload from the latest accepted nightly,
@@ -405,12 +405,12 @@ message in Slack.
 
 Launch a cluster with a specific nightly build:
 ```
-launch 4.19.0-0.nightly-2026-06-01-021531 aws
+launch {{DEV_NIGHTLY_TAG}} aws
 ```
 
 Launch a cluster with Tech Preview features enabled:
 ```
-launch 4.19 gcp,techpreview
+launch {{DEV_VERSION}} gcp,techpreview
 ```
 
 The bot provisions the cluster and sends you a kubeconfig

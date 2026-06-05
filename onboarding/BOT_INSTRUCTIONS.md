@@ -17,6 +17,37 @@ automatically from this file.
 4. Only clone the repo if you need to edit files and open
    a PR (e.g. for the feedback-to-PR workflow)
 
+## Variables
+
+Step files use template placeholders for OCP version
+numbers so examples always reflect the current release.
+Before presenting any step, resolve these variables:
+
+1. Query the Release Controller
+   (https://amd64.ocp.releases.ci.openshift.org/) to
+   determine the active release streams
+2. Resolve the following placeholders:
+
+   - `{{DEV_VERSION}}` — The highest OCP version with
+     an active nightly stream (e.g. `4.23`). This is
+     the version TRT is actively watching.
+   - `{{DEV_NIGHTLY_STREAM}}` — The nightly stream
+     name: `{{DEV_VERSION}}.0-0.nightly`
+     (e.g. `4.23.0-0.nightly`)
+   - `{{DEV_NIGHTLY_TAG}}` — The most recent tag from
+     the `{{DEV_NIGHTLY_STREAM}}` stream. Use the
+     actual tag name including timestamp
+     (e.g. `4.23.0-0.nightly-2026-06-05-181612`)
+   - `{{GA_RELEASE}}` — The latest tag from the
+     `4-stable` stream (e.g. `4.22.0`)
+
+3. Replace all template placeholders in substep content
+   before presenting to the user. The user should see
+   real version numbers, not placeholders.
+
+Cache these values once per step session — they don't
+change during a single onboarding conversation.
+
 ## Running a Step
 
 1. Read the step file indicated by `manifest.yaml`

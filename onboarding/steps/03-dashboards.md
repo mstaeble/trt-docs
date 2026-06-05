@@ -111,7 +111,7 @@ collection of container images that together make up a
 specific OCP build.
 
 The main page lists payloads grouped by release stream
-(e.g. `4.19.0-0.nightly` for nightly builds). Each row
+(e.g. `{{DEV_NIGHTLY_STREAM}}` for nightly builds). Each row
 shows:
 - **Name** — The payload tag (links to the detail page)
 - **Phase** — Accepted (all blocking tests passed),
