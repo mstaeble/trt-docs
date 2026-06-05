@@ -101,16 +101,22 @@ payload creation and verification. A "payload" is a
 collection of container images that together make up a
 specific OCP build.
 
-What the Release Controller shows you:
-- **Streams** — Groups of payloads for a specific OCP
-  version (e.g. `4.19.0-0.nightly` for nightly builds)
-- **Payload status** — Each payload is either Accepted
-  (all verification tests passed), Rejected (one or more
-  blocking tests failed), or Pending (tests still running)
-- **Blocking jobs** — Which verification tests must pass
-  for a payload to be accepted
-- **Informing jobs** — Additional tests that provide
-  signal but don't block acceptance
+The main page lists payloads grouped by release stream
+(e.g. `4.19.0-0.nightly` for nightly builds). Each row
+shows:
+- **Name** — The payload tag (links to the detail page)
+- **Phase** — Accepted (all blocking tests passed),
+  Rejected (one or more blocking tests failed), or
+  Pending (tests still running)
+- **Failures** — Names of failed verification jobs, each
+  linking to the Prow job results
+- **Team Approvals** — Explicit sign-offs from teams like
+  QE and TRT
+
+Click a payload name to open the detail page, which
+breaks verification jobs into categories: *Blocking*
+(must pass for acceptance), *Informing* (provide signal
+but don't gate), and others.
 
 The Release Controller runs per CPU architecture. The one
 you'll use most often is amd64, but others exist for
