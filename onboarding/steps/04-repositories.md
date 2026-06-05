@@ -204,10 +204,12 @@ OpenShift's end-to-end (e2e) conformance test suite. TRT
 is the primary owner of this repository.
 
 What `openshift-tests` does: it's a single binary that
-orchestrates all e2e tests for an OpenShift cluster. It
-ships as the `tests` component in every OCP (OpenShift
-Container Platform) release payload, and customers use
-it to validate their clusters.
+orchestrates all end-to-end (e2e) tests for an OpenShift
+cluster. It ships as the `tests` component in every
+release payload. Its primary purpose is powering
+OpenShift's internal CI, though some partners also use
+it for conformance validation via the OpenShift Provider
+Certification Tool (OPCT).
 
 Key directories:
 
