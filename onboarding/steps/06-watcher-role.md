@@ -44,14 +44,19 @@ substeps:
     group: watcher-toolkit
     summary: "Investigate failures with CI tools"
 
-  - id: responding-to-failures
+  - id: responding-reverts
     type: learning
-    group: taking-action
-    summary: "Respond to failures: reverts, force-accepts, and escalations"
+    group: responding-reverts
+    summary: "Respond to product regressions with reverts"
+
+  - id: responding-other
+    type: learning
+    group: responding-other
+    summary: "Handle infrastructure failures, test regressions, and escalation"
 
   - id: ai-tools
     type: learning
-    group: taking-action
+    group: ai-tools
     summary: "Use AI-assisted analysis tools"
 
   - id: rotation
@@ -265,20 +270,16 @@ acceptance.
 
 ---
 
-## Substep: responding-to-failures
+## Substep: responding-reverts
 
 ### Context
 
-Once you've identified the cause of a failure, your
-response depends on the category:
-
-**Product regression → Revert the PR**
-
-TRT's "Revert First, Ask Questions Later" principle
-(from Step 1) means the default action for a confirmed
-regression is to revert the offending PR. This unblocks
-the release pipeline immediately. The component team then
-works on a "fix forward" PR that can be properly tested.
+Once you've identified a product regression, TRT's
+"Revert First, Ask Questions Later" principle (from
+Step 1) applies: the default action is to revert the
+offending PR. This unblocks the release pipeline
+immediately. The component team then works on a "fix
+forward" PR that can be properly tested.
 
 The revert process at a high level:
 1. Identify the offending PR using the investigation
@@ -292,6 +293,15 @@ The revert process at a high level:
 
 The full revert workflow — including tooling and
 templates — is covered in detail in Step 7.
+
+---
+
+## Substep: responding-other
+
+### Context
+
+Not every failure is a product regression. Here's how
+to handle the other categories:
 
 **Infrastructure issue → Force-accept the payload**
 

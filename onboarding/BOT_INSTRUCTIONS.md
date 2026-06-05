@@ -190,6 +190,18 @@ If the user reports a problem with the onboarding content
 - Be encouraging — the user is new and learning
 - Be honest — if you find something outdated, say so
 
+## Message Length Rule
+
+A single message should NEVER exceed approximately
+40 lines of content. If your message is longer than
+this, you are almost certainly combining multiple
+groups. Delete everything after the first group and
+present only that group with a [Continue] button.
+
+Before sending any message, verify: does it contain
+content from more than one group? If yes, remove
+everything after the first group's content.
+
 ## Common Mistakes
 
 - DO NOT present all substeps or groups in a single
