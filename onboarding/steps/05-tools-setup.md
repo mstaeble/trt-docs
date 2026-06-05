@@ -77,7 +77,10 @@ commands frequently output JSON, and `jq` lets you
 extract specific fields. For example, extracting image
 names from a release payload:
 ```
-oc adm release info 4.18.0 --output=json | jq '.references.spec.tags[].name'
+OC_VERSION=$(oc version --client -o json | jq -r '.releaseClientVersion')
+oc adm release info \
+  quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64 \
+  --output=json | jq '.references.spec.tags[].name'
 ```
 
 **`yq`** — Like `jq`, but for YAML. Many CI
@@ -121,17 +124,20 @@ commonly used in TRT is the Go-based
 ### Context
 
 A pull secret contains authentication tokens for Red
-Hat's private container registries (Quay, registry.redhat.io,
-and others). You need it whenever you use
-`oc adm release info` or `oc adm release extract` against
-private release images — which is a frequent part of
-payload investigation.
+Hat's container registries (Quay, registry.redhat.io,
+and others). You need it when pulling image content —
+primarily with `oc adm release extract` (covered in the
+next substep). Reading payload metadata with
+`oc adm release info` does not require a pull secret for
+GA release images on `quay.io`.
 
 The pull secret is a JSON file you download once from the
 Red Hat Hybrid Cloud Console, store locally, and
 reference with the `-a` flag in `oc` commands:
 ```
-oc adm release info -a ~/pull-secret.json quay.io/openshift-release-dev/ocp-release:4.18.0-x86_64
+oc adm release extract -a ~/pull-secret.json \
+  --command=openshift-install \
+  --from=quay.io/openshift-release-dev/ocp-release:4.18.0-x86_64
 ```
 
 ### Action
@@ -156,29 +162,54 @@ Controller dashboard — these commands let you dig deeper
 from the command line.
 
 **`oc adm release info`** inspects a release payload's
-contents and metadata:
+contents and metadata. It requires a **full image
+pullspec** — bare version tags like `4.18.0` don't
+resolve unless you're logged in to a cluster that knows
+about that release. The full pullspec is unambiguous and
+always works.
+
+GA release images live at:
+`quay.io/openshift-release-dev/ocp-release:<version>-<arch>`
+
+where `<version>` matches an OCP release (e.g. `4.18.0`)
+and `<arch>` is `x86_64`, `aarch64`, etc. A convenient
+version to start with is your installed `oc` client
+version:
+
+```
+OC_VERSION=$(oc version --client -o json | jq -r '.releaseClientVersion')
+```
 
 View all components in a payload:
 ```
-oc adm release info 4.18.0
+oc adm release info \
+  quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64
 ```
 
 Find the image for a specific component:
 ```
-oc adm release info --image-for=tests 4.18.0
+oc adm release info --image-for=tests \
+  quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64
 ```
 
 Show the Git commits included in each component (useful
 for identifying which code is in a rejected payload):
 ```
-oc adm release info --commit-urls 4.18.0
+oc adm release info --commit-urls \
+  quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64
 ```
 
 Use JSON output for scripting:
 ```
-oc adm release info 4.18.0 --output=json \
-  | jq '.references.spec.tags[] | select(.name=="machine-os-content")'
+oc adm release info \
+  quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64 \
+  --output=json \
+  | jq '.references.spec.tags[] | select(.name=="cluster-version-operator")'
 ```
+
+If you're on Apple Silicon, substitute `-aarch64` for
+`-x86_64` — both architectures contain the same release
+metadata.
 
 **`oc adm release extract`** pulls files from a release
 payload. The most common use is extracting the
@@ -187,21 +218,23 @@ payload. The most common use is extracting the
 ```
 oc adm release extract -a ~/pull-secret.json \
   --command=openshift-install \
-  --from=quay.io/openshift-release-dev/ocp-release:4.18.0-x86_64
+  --from=quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64
 ```
 
 Extract all client tools at once:
 ```
 oc adm release extract -a ~/pull-secret.json \
   --tools \
-  quay.io/openshift-release-dev/ocp-release:4.18.0-x86_64
+  quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64
 ```
 
-For CI nightly builds (hosted on
-`registry.ci.openshift.org`), you may not need the `-a`
-flag if you're already logged in to the CI registry. For
-GA release images on `quay.io`, the pull secret is
-required.
+`oc adm release info` (reading metadata) does not require
+a pull secret for GA images on `quay.io`.
+`oc adm release extract` (pulling image content) does —
+pass `-a ~/pull-secret.json` as shown above. For CI
+nightly builds (hosted on `registry.ci.openshift.org`),
+you may not need the `-a` flag if you're already logged
+in to the CI registry.
 
 You'll use these commands extensively during the watcher
 role (Step 6) to investigate which commits are in
@@ -409,9 +442,9 @@ Verify your tools and access are ready:
   `mikefarah/yq`
 - Your pull secret file exists and is valid JSON
   (`jq . ~/pull-secret.json` succeeds)
-- `oc adm release info 4.18.0` returns payload
-  information (this uses a public tag and should work
-  without a pull secret)
+- `oc adm release info quay.io/openshift-release-dev/ocp-release:$(oc version --client -o json | jq -r '.releaseClientVersion')-x86_64`
+  returns payload information (substitute `-aarch64` on
+  Apple Silicon)
 - `oc whoami` with the `app.ci` context shows your
   Kerberos ID (`oc config use-context app.ci` first if
   you have multiple contexts)
