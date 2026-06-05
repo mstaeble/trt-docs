@@ -8,6 +8,7 @@ claims:
   channels: []
   urls:
     - https://sippy.dptools.openshift.org/sippy-ng/
+    - https://sippy-auth.dptools.openshift.org/sippy-ng/
     - https://amd64.ocp.releases.ci.openshift.org/
     - https://prow.ci.openshift.org/
     - https://search.ci.openshift.org/
@@ -54,9 +55,7 @@ substeps:
     type: action
     summary: "Bookmark your essential dashboards"
 
-  - id: verify-access
-    type: verification
-    summary: "Verify you can access all dashboards"
+
 ---
 
 ## Substep: sippy
@@ -87,6 +86,13 @@ Your daily workflow with Sippy:
 Sippy data is ingested from CI job results and may lag a
 few hours behind real time. For live payload status, use
 the Release Controller (next substep).
+
+The main Sippy dashboard is publicly accessible for
+read-only viewing. A separate authenticated version at
+[sippy-auth](https://sippy-auth.dptools.openshift.org/sippy-ng/)
+requires Red Hat SSO — you'll need this when you start
+triaging regressions, as it records who performed each
+triage action.
 
 You'll use Component Readiness extensively in the watcher
 role (Step 6) and learn its full triage workflow in
@@ -206,7 +212,10 @@ Two dashboards help you monitor CI infrastructure health:
 
 **[Grafana](https://grafana-loki.ci.openshift.org/)** —
 Provides CI observability dashboards built on Prometheus
-metrics. The
+metrics. Grafana requires a Red Hat SSO login — if you
+see a login page, sign in with your Red Hat credentials.
+If access is denied after login, check with your
+onboarding buddy. The
 [OpenShift CI Observability](https://grafana-loki.ci.openshift.org/dashboards/f/4X8Jfhs4z/openshift-ci-observability)
 folder contains the dashboards most relevant to TRT,
 including:
@@ -237,8 +246,13 @@ an infrastructure outage rather than a test regression.
 ### Context
 
 TRT tracks work and CI regressions in
-[Jira](https://redhat.atlassian.net/). The two projects
-you'll use most:
+[Jira](https://redhat.atlassian.net/). Jira requires
+Red Hat SSO, and the TRT project additionally requires
+the `openshift-technical-release-team` Rover group you
+verified in Step 2. If you can't access the TRT project,
+revisit Step 2's access verification.
+
+The two projects you'll use most:
 
 - **[TRT](https://redhat.atlassian.net/projects/TRT/)** —
   The team's own project for internal work items, process
@@ -290,30 +304,12 @@ A suggested folder structure:
 
 ---
 
-## Substep: verify-access
-
-### Verification
-
-Open each URL below and confirm it loads without errors.
-If any dashboard requires access you don't have, check
-with your onboarding buddy.
-
-- Sippy: https://sippy.dptools.openshift.org/sippy-ng/
-- Release Controller:
-  https://amd64.ocp.releases.ci.openshift.org/
-- Prow: https://prow.ci.openshift.org/
-- CI Search: https://search.ci.openshift.org/
-- Grafana: https://grafana-loki.ci.openshift.org/
-- SHIP Status: https://ship-status.ci.openshift.org/
-- Jira (TRT): https://redhat.atlassian.net/projects/TRT/
-- Jira (OCPBUGS): https://redhat.atlassian.net/projects/OCPBUGS/
-- CI Docs: https://docs.ci.openshift.org/
-
----
-
 ## Known References
 
 - Sippy: https://sippy.dptools.openshift.org/sippy-ng/
+  (verified: 2026-06-05)
+- Sippy (authenticated):
+  https://sippy-auth.dptools.openshift.org/sippy-ng/
   (verified: 2026-06-05)
 - Release Controller (amd64):
   https://amd64.ocp.releases.ci.openshift.org/
