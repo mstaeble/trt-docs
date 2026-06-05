@@ -17,11 +17,12 @@ steps:
       sister teams.
 
   - id: 02-slack-channels
-    title: Slack Channels & Communication
+    title: Communications & Access
     file: steps/02-slack-channels.md
     audience: new-hire
     description: >
-      Channels to join, what each is for, and channel norms.
+      Channels to join, channel norms, and access
+      verification (Rover groups, Google Groups).
 
   - id: 03-dashboards
     title: Dashboards & URLs
