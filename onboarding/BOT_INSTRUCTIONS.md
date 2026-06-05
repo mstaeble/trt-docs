@@ -53,12 +53,8 @@ Always use buttons to let the user advance. Do not ask
 
 ## After All Substeps
 
-1. Check every item in the Known References section against
-   live data (verify URLs are reachable, channels exist,
-   repos exist)
-2. Report any discrepancies and offer to help fix them
-3. Post the reference card (see below)
-4. Present the next step prompt (see Step Completion below)
+1. Post the reference card (see below)
+2. Present the next step prompt (see Step Completion below)
 
 ## Step Completion
 
@@ -124,8 +120,9 @@ link.
   reaches a step, its content has already been validated.
 - Only query live data when a substep contains an explicit
   Prompt section that asks for it.
-- Save Known References verification for the end of the
-  step, not during substep presentation.
+- Do not verify Known References during steps. All
+  verification is handled by the Step 0 pre-onboarding
+  review.
 
 ## Handling Feedback
 
