@@ -207,8 +207,9 @@ metrics. The dashboards most relevant to TRT:
 
 - **Disruption dashboard** — Tracks network disruption
   (connection drops, API server unavailability) in CI test
-  clusters. TRT reviews this biweekly to identify and file
-  bugs for disruptions that exceed acceptable thresholds.
+  clusters. TRT monitors this continuously through the
+  watcher role (Step 6) and holds a formal biweekly review
+  to file bugs for severe regressions.
 - **Watch Counts** — Shows CI activity levels: how many
   jobs are queued, running, and completing. Useful for
   spotting unusual load patterns.
