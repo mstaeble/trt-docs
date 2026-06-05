@@ -16,6 +16,8 @@ claims:
     - https://ship-status.ci.openshift.org/
     - https://docs.ci.openshift.org/
     - https://redhat.atlassian.net/
+    - https://redhat.atlassian.net/projects/TRT/
+    - https://redhat.atlassian.net/projects/OCPBUGS/
   repos: []
   tools: []
 
@@ -238,12 +240,14 @@ TRT tracks work and CI regressions in
 [Jira](https://redhat.atlassian.net/). The two projects
 you'll use most:
 
-- **TRT** — The team's own project for internal work
-  items, process improvements, and tooling enhancements.
-- **OCPBUGS** — All OCP bugs are tracked here. When you
-  triage a Component Readiness regression, you file the
-  bug in OCPBUGS and assign it to the responsible
-  component team.
+- **[TRT](https://redhat.atlassian.net/projects/TRT/)** —
+  The team's own project for internal work items, process
+  improvements, and tooling enhancements.
+- **[OCPBUGS](https://redhat.atlassian.net/projects/OCPBUGS/)** —
+  All OCP bugs are tracked here. When you triage a
+  Component Readiness regression, you file the bug in
+  OCPBUGS and assign it to the responsible component
+  team.
 
 Daily workflow: when Sippy's Component Readiness shows a
 new regression, you create an OCPBUGS ticket with the test
@@ -281,7 +285,8 @@ A suggested folder structure:
 - SHIP Status: https://ship-status.ci.openshift.org/
 
 **TRT — Work Tracking:**
-- Jira: https://redhat.atlassian.net/
+- Jira (TRT): https://redhat.atlassian.net/projects/TRT/
+- Jira (OCPBUGS): https://redhat.atlassian.net/projects/OCPBUGS/
 
 ---
 
@@ -300,7 +305,8 @@ with your onboarding buddy.
 - CI Search: https://search.ci.openshift.org/
 - Grafana: https://grafana-loki.ci.openshift.org/
 - SHIP Status: https://ship-status.ci.openshift.org/
-- Jira: https://redhat.atlassian.net/
+- Jira (TRT): https://redhat.atlassian.net/projects/TRT/
+- Jira (OCPBUGS): https://redhat.atlassian.net/projects/OCPBUGS/
 - CI Docs: https://docs.ci.openshift.org/
 
 ---
@@ -328,6 +334,10 @@ with your onboarding buddy.
 - SHIP Status: https://ship-status.ci.openshift.org/
   (verified: 2026-06-05)
 - Jira: https://redhat.atlassian.net/
+  (verified: 2026-06-05)
+- Jira TRT project: https://redhat.atlassian.net/projects/TRT/
+  (verified: 2026-06-05)
+- Jira OCPBUGS project: https://redhat.atlassian.net/projects/OCPBUGS/
   (verified: 2026-06-05)
 - openshift/release repo:
   https://github.com/openshift/release
