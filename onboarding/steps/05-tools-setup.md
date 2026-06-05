@@ -324,11 +324,16 @@ launched by a CI job, the kubeconfig is stored in a
 secret within the job's namespace on the build farm. You
 can extract it with:
 ```
-oc --context build01 get secret -n <ci-op-namespace> <job-name> \
+oc --context <build-cluster> get secret -n <ci-op-namespace> <job-name> \
   -o yaml | yq -r '.data.kubeconfig' | base64 -d
 ```
-This requires access to the build farm cluster. The job's
-Prow logs show which build cluster ran the job.
+where `<build-cluster>` is the context name for the build
+farm cluster that ran the job (e.g. `build01`). You would
+set this up the same way you logged in to `app.ci` —
+via the cluster's web console and "Copy login command".
+The job's Prow logs show which build cluster ran the job.
+This requires build farm access, which you would request
+first in #forum-ocp-testplatform as described above.
 
 For your first weeks, focus on using Prow logs, CI
 Search, and Sippy for investigation. You can request
