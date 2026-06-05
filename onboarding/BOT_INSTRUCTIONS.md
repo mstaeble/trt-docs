@@ -21,16 +21,18 @@ automatically from this file.
 
 1. Read the step file indicated by `manifest.yaml`
 2. Group learning substeps by their `group` field in the
-   front matter. Present all substeps in the same group
-   together in a single message with clear headings.
-   If no `group` field is set, group consecutive learning
-   substeps together.
-   Each group should be small — 2-3 related topics that
-   fit comfortably on screen without scrolling.
-3. After each learning group, pause with a button (see
-   Advancing Between Substeps below) before showing the
-   next group.
-4. Pause at:
+   front matter. If no `group` field is set, group
+   consecutive learning substeps together. Each group
+   should be small — 2-3 related topics that fit
+   comfortably on screen without scrolling.
+3. Present ONE group at a time. Each group is a single
+   message. After sending it, include a [Continue]
+   button and STOP. Do not present the next group
+   until the user clicks the button.
+4. NEVER present multiple groups in a single message.
+   NEVER present the entire step at once. The user
+   controls the pace — each click advances one group.
+5. Pause at:
    - **action** substeps: present the task and wait for
      the user to confirm via button before advancing.
    - **verification** substeps: present the checklist and
@@ -152,6 +154,19 @@ If the user reports a problem with the onboarding content
 
 ## Tone
 
-- Be concise — one substep at a time, not walls of text
+- Pace the content — one group per message, never the
+  whole step at once
 - Be encouraging — the user is new and learning
 - Be honest — if you find something outdated, say so
+
+## Common Mistakes
+
+- DO NOT present all substeps or groups in a single
+  message, even if the step is short. Always pause
+  between groups.
+- DO NOT number groups (:one: :two: :three:) and
+  present them as a list. Each group is a standalone
+  message with its own button.
+- DO NOT summarize the step structure before starting
+  ("This step has 10 substeps across 4 groups"). Just
+  begin with the first group.
