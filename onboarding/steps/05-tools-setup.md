@@ -267,7 +267,7 @@ basic read access.
 
 ### Action
 
-- Open the app.ci web console:
+- Open the `app.ci` web console:
   [console-openshift-console.apps.ci.l2s4.p1.openshiftapps.com](https://console-openshift-console.apps.ci.l2s4.p1.openshiftapps.com/)
 - Log in with your Red Hat SSO credentials
 - Click your username in the top-right corner and select
@@ -282,7 +282,7 @@ basic read access.
   ```
   oc config rename-context $(oc config current-context) app.ci
   ```
-  This lets you switch to the app.ci context with
+  This lets you switch to the `app.ci` context with
   `oc config use-context app.ci` instead of remembering
   the full context name
 
@@ -462,7 +462,7 @@ Verify your tools and access are ready:
 - Pull secret download:
   https://console.redhat.com/openshift/install/pull-secret
   (verified: 2026-06-05)
-- app.ci web console:
+- `app.ci` web console:
   https://console-openshift-console.apps.ci.l2s4.p1.openshiftapps.com/
   (verified: 2026-06-05)
 - openshift/release:
