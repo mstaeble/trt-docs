@@ -201,10 +201,15 @@ determine the root cause, and file Jira tickets against
 the owning team. The full triage workflow is covered in
 Step 7.
 
-The authenticated Sippy instance
+As a watcher, you'll use the authenticated Sippy instance
 ([sippy-auth](https://sippy-auth.dptools.openshift.org/sippy-ng/))
-is required for triaging regressions — it records who
-performed each triage action.
+for all triage work. The public instance
+(introduced in Step 3) is read-only — you can view
+reports but can't act on them. Sippy-auth requires Red
+Hat SSO and is where you create triage records, link
+failures to Jira bugs, and file bugs directly from test
+detail pages. Bookmark sippy-auth as your default — as a
+watcher, you'll almost always need the write actions.
 
 **Disruption Dashboard** — The
 [Grafana disruption dashboard](https://grafana-loki.ci.openshift.org/d/ISnBj4LVk/disruption?orgId=1)

@@ -87,12 +87,21 @@ Sippy data is ingested from CI job results and may lag a
 few hours behind real time. For live payload status, use
 the Release Controller (next substep).
 
-The main Sippy dashboard is publicly accessible for
-read-only viewing. A separate authenticated version at
-[sippy-auth](https://sippy-auth.dptools.openshift.org/sippy-ng/)
-requires Red Hat SSO — you'll need this when you start
-triaging regressions, as it records who performed each
-triage action.
+Sippy runs two instances. The public dashboard
+([sippy.dptools.openshift.org](https://sippy.dptools.openshift.org/sippy-ng/))
+is read-only — you can browse all dashboards, test
+results, and Component Readiness reports without logging
+in, and it's useful for sharing links with anyone. The
+authenticated instance
+([sippy-auth](https://sippy-auth.dptools.openshift.org/sippy-ng/))
+requires Red Hat SSO and enables all write actions:
+triaging regressions in Component Readiness (creating
+triage records, linking test failures to Jira bugs),
+filing bugs directly from test detail pages, and using
+Sippy Chat (an AI tool for querying CI data — covered in
+Step 6). As a rule of thumb: if you're just looking,
+the public instance works; if you're taking action,
+you need sippy-auth.
 
 You'll use Component Readiness extensively in the watcher
 role (Step 6) and learn its full triage workflow in
