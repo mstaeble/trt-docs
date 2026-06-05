@@ -12,6 +12,7 @@ claims:
     - https://prow.ci.openshift.org/
     - https://search.ci.openshift.org/
     - https://grafana-loki.ci.openshift.org/
+    - https://grafana-loki.ci.openshift.org/dashboards/f/4X8Jfhs4z/openshift-ci-observability
     - https://ship-status.ci.openshift.org/
     - https://docs.ci.openshift.org/
     - https://redhat.atlassian.net/
@@ -203,16 +204,22 @@ Two dashboards help you monitor CI infrastructure health:
 
 **[Grafana](https://grafana-loki.ci.openshift.org/)** —
 Provides CI observability dashboards built on Prometheus
-metrics. The dashboards most relevant to TRT:
+metrics. The
+[OpenShift CI Observability](https://grafana-loki.ci.openshift.org/dashboards/f/4X8Jfhs4z/openshift-ci-observability)
+folder contains the dashboards most relevant to TRT,
+including:
 
-- **Disruption dashboard** — Tracks network disruption
-  (connection drops, API server unavailability) in CI test
-  clusters. TRT monitors this continuously through the
-  watcher role (Step 6) and holds a formal biweekly review
-  to file bugs for severe regressions.
+- **Disruption** — Tracks network disruption (connection
+  drops, API server unavailability) in CI test clusters.
+  TRT monitors this continuously through the watcher role
+  (Step 6) and holds a formal biweekly review to file bugs
+  for severe regressions.
 - **Watch Counts** — Shows CI activity levels: how many
   jobs are queued, running, and completing. Useful for
   spotting unusual load patterns.
+
+Browse the folder for other dashboards that may be useful
+as you settle into the role.
 
 **[SHIP Status Dashboard](https://ship-status.ci.openshift.org/)** —
 Shows real-time health of all SHIP infrastructure
@@ -314,6 +321,9 @@ with your onboarding buddy.
 - CI Docs: https://docs.ci.openshift.org/
   (verified: 2026-06-05)
 - Grafana: https://grafana-loki.ci.openshift.org/
+  (verified: 2026-06-05)
+- Grafana CI Observability folder:
+  https://grafana-loki.ci.openshift.org/dashboards/f/4X8Jfhs4z/openshift-ci-observability
   (verified: 2026-06-05)
 - SHIP Status: https://ship-status.ci.openshift.org/
   (verified: 2026-06-05)
