@@ -204,7 +204,7 @@ Use JSON output for scripting:
 oc adm release info \
   quay.io/openshift-release-dev/ocp-release:${OC_VERSION}-x86_64 \
   --output=json \
-  | jq '.references.spec.tags[] | select(.name=="machine-os-content")'
+  | jq '.references.spec.tags[] | select(.name=="cluster-version-operator")'
 ```
 
 If you're on Apple Silicon, substitute `-aarch64` for
