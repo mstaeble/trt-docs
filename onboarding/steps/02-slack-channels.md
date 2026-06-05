@@ -61,8 +61,8 @@ TRT has two primary Slack channels:
 main hub. Everything happens here: CI job failure triage,
 payload status, release-blocking decisions, and
 coordination with component teams. Expect 20-50 messages
-per day. TRT also holds weekly office hours on Thursdays
-via Slack huddle in this channel.
+per day. TRT also holds office hours in this channel
+(see the communication-norms substep for details).
 
 **#forum-release-oversight-staff** (private) — TRT's
 internal channel for team coordination: watcher rotation
@@ -94,10 +94,15 @@ message to reach the current watcher. You can type it in
 the compose box without sending to see who's currently in
 the group.
 
-**Office hours:** TRT holds open office hours every
-Thursday via Slack huddle in #forum-ocp-release-oversight.
-Anyone can join to ask questions about release health, CI
-failures, or TRT processes.
+**Office hours:** TRT has two recurring office hours
+sessions. Both are open to anyone with questions about
+release health, CI failures, or TRT processes:
+
+- **Fridays 9:15–10:00 AM ET** — weekly, on the AOS Main
+  Calendar
+- **Thursdays 2:00–3:00 PM ET** — biweekly Slack huddle in
+  #forum-ocp-release-oversight (watch the channel for the
+  automated reminder to confirm which weeks it runs)
 
 **Async-first:** TRT works primarily asynchronously through
 Slack. Most decisions and coordination happen in channel
