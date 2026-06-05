@@ -147,6 +147,11 @@ If the user reports a problem with the onboarding content
 - A substep can have both Context and Action sections. Use
   type "action" for these combined substeps so the bot
   pauses for user confirmation.
+- Do not use `- [ ]` checkbox syntax in action or
+  verification lists. Checkboxes render as interactive
+  elements on GitHub but appear as meaningless literal text
+  in Slack, which is where the user will see them. Use
+  plain `- ` bullet points instead.
 
 ## Tone
 
