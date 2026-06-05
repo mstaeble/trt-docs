@@ -196,14 +196,14 @@ The handoff from TRT to the patch manager occurs at GA.
 
 Arrange to shadow a watcher rotation:
 
-- [ ] Find out who the current watcher is. You can:
+- Find out who the current watcher is. You can:
       - Type `@team-technical-release` in any Slack message
         compose box (without sending) to see who is
         currently in the watcher alias
       - Check the
         [watcher rotation spreadsheet](https://docs.google.com/spreadsheets/d/1SysVHL12nRsRZq6su9puh7wNGtKM4ggj1uprTD4srUU/edit?gid=1723723419#gid=1723723419)
       - Ask in #forum-release-oversight-staff
-- [ ] Reach out to a current watcher and arrange to
+- Reach out to a current watcher and arrange to
       shadow their next rotation
 
 The [watcher rotation doc](https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit?tab=t.0#heading=h.yg3sfsodg686)

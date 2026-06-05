@@ -78,10 +78,10 @@ release-blocking events that need immediate attention.
 
 ### Action
 
-- [ ] Join #forum-ocp-release-oversight
-- [ ] Ask your buddy or manager to add you to
+- Join #forum-ocp-release-oversight
+- Ask your buddy or manager to add you to
       #forum-release-oversight-staff (private channel)
-- [ ] Join #trt-alert
+- Join #trt-alert
 
 ---
 
@@ -143,9 +143,9 @@ on.
 
 ### Action
 
-- [ ] Join #forum-ocp-art
-- [ ] Join #forum-ocp-testplatform
-- [ ] Join #forum-ocp-crt
+- Join #forum-ocp-art
+- Join #forum-ocp-testplatform
+- Join #forum-ocp-crt
 
 ---
 
@@ -201,7 +201,7 @@ are most relevant to your triage work.
 
 ### Action
 
-- [ ] Join #control-plane-cr — this is the most broadly
+- Join #control-plane-cr — this is the most broadly
       relevant alert channel for TRT work
 
 ---
@@ -235,7 +235,7 @@ during triage.
 
 ### Action
 
-- [ ] Ask your manager to add you to the
+- Ask your manager to add you to the
       openshift-trt-staff@redhat.com mailing list
 
 ---
@@ -246,14 +246,14 @@ during triage.
 
 Confirm you have joined or been added to:
 
-- [ ] #forum-ocp-release-oversight (public)
-- [ ] #forum-release-oversight-staff (private)
-- [ ] #trt-alert
-- [ ] #forum-ocp-art
-- [ ] #forum-ocp-testplatform
-- [ ] #forum-ocp-crt
-- [ ] #control-plane-cr
-- [ ] openshift-trt-staff@redhat.com mailing list
+- #forum-ocp-release-oversight (public)
+- #forum-release-oversight-staff (private)
+- #trt-alert
+- #forum-ocp-art
+- #forum-ocp-testplatform
+- #forum-ocp-crt
+- #control-plane-cr
+- openshift-trt-staff@redhat.com mailing list
 
 ---
 
