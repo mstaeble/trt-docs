@@ -71,6 +71,23 @@ Start a Chai Bot DM thread and paste:
      guide
 4. Confirm to the new hire's manager that the guide is ready
 
+## Access Provisioning
+
+Complete these before the new hire's first day. Most of
+these require a manager or group owner to add the new hire,
+and provisioning can take 2-3 days.
+
+- Add to Rover group:
+  [openshift-technical-release-team](https://rover.redhat.com/groups/group/openshift-technical-release-team)
+- Add to Rover group:
+  [trt-sippy-postgresql](https://rover.redhat.com/groups/group/trt-sippy-postgresql)
+- Add to Google Group:
+  [openshift-technical-release-staff](https://groups.google.com/a/redhat.com/g/openshift-technical-release-staff/about)
+- Add to Slack: #forum-release-oversight-staff (private)
+
+As future onboarding steps are developed, additional access
+requirements should be added to this list.
+
 ## When to Run This
 
 - Every time a new hire is joining — ideally one week before

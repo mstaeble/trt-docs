@@ -1,6 +1,6 @@
 ---
 id: 02-slack-channels
-title: Slack Channels & Communication
+title: Communications & Access
 order: 2
 audience: new-hire
 
@@ -42,9 +42,9 @@ substeps:
     type: learning
     summary: "Learn about announcement and ad-hoc channels"
 
-  - id: mailing-list
+  - id: verify-access
     type: action
-    summary: "Join the TRT mailing list"
+    summary: "Verify Rover groups and Google Group access"
 
   - id: verification
     type: verification
@@ -109,9 +109,10 @@ Slack. Most decisions and coordination happen in channel
 threads, not meetings. When you have a question, post it
 in the relevant channel rather than waiting for a meeting.
 
-**Mailing list:** openshift-trt-staff@redhat.com is used
-for administrative purposes like calendar invites and
-document ownership. Slack covers day-to-day communication.
+**Google Group:** The team uses the
+openshift-technical-release-staff Google Group for
+administrative purposes like calendar invites and document
+ownership. Slack covers day-to-day communication.
 
 ---
 
@@ -236,12 +237,24 @@ during triage.
 
 ---
 
-## Substep: mailing-list
+## Substep: verify-access
+
+### Context
+
+Your onboarding buddy should have provisioned your access
+to the following before your first day (as part of the
+Step 0 pre-review). Verify that you have access to each.
+If anything is missing, ask your buddy or manager to
+follow up.
 
 ### Action
 
-- Ask your manager to add you to the
-      openshift-trt-staff@redhat.com mailing list
+- Verify you are in Rover group:
+  [openshift-technical-release-team](https://rover.redhat.com/groups/group/openshift-technical-release-team)
+- Verify you are in Rover group:
+  [trt-sippy-postgresql](https://rover.redhat.com/groups/group/trt-sippy-postgresql)
+- Verify you are in Google Group:
+  [openshift-technical-release-staff](https://groups.google.com/a/redhat.com/g/openshift-technical-release-staff/about)
 
 ---
 
@@ -258,31 +271,37 @@ Confirm you have joined or been added to:
 - #forum-ocp-testplatform
 - #forum-ocp-crt
 - #control-plane-cr
-- openshift-trt-staff@redhat.com mailing list
+- Rover group: openshift-technical-release-team
+- Rover group: trt-sippy-postgresql
+- Google Group: openshift-technical-release-staff
 
 ---
 
 ## Known References
 
 - TRT primary channel: #forum-ocp-release-oversight
-  (verified: 2026-06-04)
+  (verified: 2026-06-05)
 - TRT staff channel: #forum-release-oversight-staff
-  (verified: 2026-06-04)
-- TRT alert channel: #trt-alert (verified: 2026-06-04)
-- ART channel: #forum-ocp-art (verified: 2026-06-04)
+  (verified: 2026-06-05)
+- TRT alert channel: #trt-alert (verified: 2026-06-05)
+- ART channel: #forum-ocp-art (verified: 2026-06-05)
 - DPTP channel: #forum-ocp-testplatform
-  (verified: 2026-06-04)
-- CRT channel: #forum-ocp-crt (verified: 2026-06-04)
+  (verified: 2026-06-05)
+- CRT channel: #forum-ocp-crt (verified: 2026-06-05)
 - Component Readiness alerts: #control-plane-cr
-  (verified: 2026-06-04)
+  (verified: 2026-06-05)
 - Announcements: #announce-testplatform
-  (verified: 2026-06-04)
+  (verified: 2026-06-05)
 - Release notifications: #forum-ocp-release
-  (verified: 2026-06-04)
+  (verified: 2026-06-05)
 - Team alias: @team-technical-release
-  (verified: 2026-06-04)
-- Mailing list: openshift-trt-staff@redhat.com
-  (verified: 2026-06-04)
+  (verified: 2026-06-05)
+- Google Group: openshift-technical-release-staff
+  (verified: 2026-06-05)
+- Rover group: openshift-technical-release-team
+  (verified: 2026-06-05)
+- Rover group: trt-sippy-postgresql
+  (verified: 2026-06-05)
 
 ## Feedback
 
