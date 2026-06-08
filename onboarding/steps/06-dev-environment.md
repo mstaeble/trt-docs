@@ -18,7 +18,7 @@ claims:
     - openshift/sippy
     - openshift/release
     - openshift-eng/ci-test-mapping
-    - openshift-eng/ci-tools
+    - openshift/ci-tools
   tools:
     - go
     - node
@@ -137,7 +137,7 @@ requires both Go and Node.js:
 project — `make build` and `make test` are the main
 targets.
 
-**[openshift-eng/ci-tools](https://github.com/openshift-eng/ci-tools)**
+**[openshift/ci-tools](https://github.com/openshift/ci-tools)**
 — Shared CI tooling (co-owned with DPTP). Contains
 `ci-operator` and supporting tools. This repo has a
 large codebase; focus on the areas relevant to your
