@@ -96,6 +96,11 @@ directory (`vendor/`). This means:
   - **macOS (Homebrew):** `brew install go`
   - **Fedora/RHEL:** `sudo dnf install golang`
 - Verify your installation: `go version`
+- Install Node.js and npm (required by Sippy's build
+  system, even for backend-only builds):
+  - **macOS (Homebrew):** `brew install node`
+  - **Fedora/RHEL:** `sudo dnf install nodejs npm`
+  - Verify: `node --version && npm --version`
 - Clone Sippy and check its required Go version:
   ```
   git clone https://github.com/openshift/sippy.git
