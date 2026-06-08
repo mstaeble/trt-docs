@@ -186,10 +186,21 @@ consistent template formatting across all TRT reverts.
 **Installation:**
 
 revertomatic requires
-[Go](https://go.dev/doc/install) and a GitHub personal
-access token. Create a
-[personal access token](https://github.com/settings/tokens)
-with `read:org`, `repo`, and `user` scopes, then:
+[Go](https://go.dev/doc/install) and a GitHub
+**classic** personal access token. The tool needs broad
+repository access (it must operate on whichever
+`openshift/*` repo had the regression), which maps
+to classic token scopes rather than the newer
+fine-grained tokens. Create a
+[classic token](https://github.com/settings/tokens)
+with these scopes:
+
+- `repo` — read PRs, commit statuses; create forks
+  and revert PRs
+- `read:org` — read organization membership
+- `user` — read your profile (used to find your fork)
+
+Then:
 
 ```
 export GITHUB_TOKEN="<your-token>"
