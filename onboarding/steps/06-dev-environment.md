@@ -89,11 +89,15 @@ directory (`vendor/`). This means:
   - **macOS (Homebrew):** `brew install go`
   - **Fedora/RHEL:** `sudo dnf install golang`
 - Verify your installation: `go version`
-- Clone Sippy (explored in Step 4) and check its
-  required Go version:
-  `head -2 go.mod` — note the `go X.Y` line
-- Verify you can build it: `make sippy`
-  (this builds just the Go backend)
+- Clone Sippy and check its required Go version:
+  ```
+  git clone https://github.com/openshift/sippy.git
+  cd sippy
+  head -2 go.mod
+  ```
+  Note the `go X.Y` line — your installed Go version
+  must meet or exceed it.
+- Verify you can build the backend: `make sippy`
 
 ---
 
