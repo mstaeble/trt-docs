@@ -322,12 +322,75 @@ When a red cell appears in
 [Component Readiness](https://sippy.dptools.openshift.org/sippy-ng/component_readiness/main),
 triage follows this workflow:
 
-**Step 1: Investigate the regression**
-- Click the red cell to open the test details page
-- Review the failure pattern — is it consistent or
-  intermittent?
-- Check whether the regression correlates with a specific
-  PR or payload
+**Step 1: Identify which red cells need attention**
+
+Not every red cell requires immediate action. Look at the
+icons next to each cell to understand its triage state:
+
+- **No icon (untriaged)** — Needs attention. No one has
+  linked this regression to a Jira bug yet.
+- **Bandage icon (triaged)** — Already linked to a Jira
+  bug. Check the bug to see if a fix is in progress.
+- **"Believed fixed" icon** — A fix has been merged or
+  the bug moved to ON_QA. Waiting for CI to verify.
+- **Warning icon** — A previously resolved regression has
+  reappeared. Treat as high priority.
+
+You can generally deprioritize:
+- Regressions caused by CI infrastructure issues (e.g.,
+  a cloud provider outage) rather than product bugs
+- Tests with very low sample sizes where a single failure
+  skews the pass rate
+- Tests in `candidate` or `hidden` tiers (disruptive
+  tests), which are not release blockers
+
+**Step 1b: Drill down to specific test failures**
+
+Clicking a red cell in the grid adds a filter to the same
+view — it does not take you directly to test results.
+Instead, use the *Regressed Tests* table:
+
+1. At the top of the Component Readiness report, click
+   "Regressed Tests" to open the list of all currently
+   regressed tests
+2. Optionally filter by component to narrow the list
+3. Click a test name to open its *Test Details* page
+
+The Test Details page shows:
+- Pass/fail statistics comparing the sample period
+  (current) to the basis period (historical baseline)
+- The Fisher's Exact Test probability score
+- A list of specific failing Prow job runs with direct
+  links to logs and artifacts
+
+Review the failure pattern across job runs: is the test
+failing consistently on all platforms, or only on specific
+variants? Consistent failures suggest a product bug;
+variant-specific failures may point to infrastructure or
+platform-specific issues.
+
+**Step 1c: Correlate with PRs**
+
+Once you know *when* the regression started (from the test
+history on the Test Details page), identify the last good
+and first bad payload tags. Then use the Sippy payload
+diff API to see which PRs landed between them:
+
+```
+curl 'https://sippy.dptools.openshift.org/api/payloads/diff?fromPayload=<last_good_payload>&toPayload=<first_bad_payload>' | jq
+```
+
+This returns a JSON list of PRs present in the first-bad
+payload but not in the last-good one. To narrow the list:
+- Look for PRs in the same component as the failing test
+- Check PR titles and descriptions for keywords related
+  to the failure
+- Examine the code diff of suspect PRs on GitHub to see
+  if the changes could plausibly cause the regression
+
+> **Tip:** If you omit `fromPayload`, the API
+> automatically compares against the previous payload in
+> the same stream — useful for quick checks.
 
 **Step 2: File a Jira bug**
 - Create a bug in the
