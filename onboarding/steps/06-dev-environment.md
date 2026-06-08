@@ -66,12 +66,19 @@ is the dominant language across the OpenShift ecosystem,
 and all TRT code contributions will be in Go (backend)
 or TypeScript/React (Sippy frontend).
 
-Each repository declares its required Go version in its
-`go.mod` file at the repo root. When you clone a repo,
-check `go.mod` to confirm you have a compatible version
-installed. Go's backward compatibility means a newer Go
-installation will generally work, but matching or
-exceeding the declared version avoids surprises.
+Each repository declares its minimum required Go version
+in its `go.mod` file at the repo root.
+
+**Go version compatibility:** Go is backward compatible,
+so a newer Go installation can always build code that
+declares an older version. For example, if `go.mod` says
+`go 1.25.0` and you have Go 1.26.4 installed, that
+works fine. The reverse does not — if your Go is older
+than what `go.mod` declares, the build will fail. In
+that case, install the latest Go from
+[go.dev/dl](https://go.dev/dl/) or update via your
+package manager (`brew upgrade go` or
+`sudo dnf upgrade golang`).
 
 All TRT repos use Go modules with a vendored dependency
 directory (`vendor/`). This means:
@@ -93,10 +100,12 @@ directory (`vendor/`). This means:
   ```
   git clone https://github.com/openshift/sippy.git
   cd sippy
-  head -2 go.mod
+  grep '^go ' go.mod
   ```
-  Note the `go X.Y` line — your installed Go version
-  must meet or exceed it.
+  This prints the minimum Go version (e.g. `go 1.25.0`).
+  If your `go version` output shows an equal or higher
+  version, you're good. If it's lower, update Go before
+  continuing.
 - Verify you can build the backend: `make sippy`
 
 ---
@@ -356,8 +365,8 @@ CI failures.
 Verify your development environment is ready for TRT
 coding work:
 
-- `go version` outputs a version that meets or exceeds
-  the version declared in Sippy's `go.mod`
+- `go version` outputs a version equal to or higher than
+  the version shown by `grep '^go ' go.mod` in Sippy
 - You can build the Sippy backend: `make sippy`
   completes without errors (from the `openshift/sippy`
   checkout)
