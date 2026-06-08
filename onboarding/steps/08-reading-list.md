@@ -7,6 +7,7 @@ audience: new-hire
 claims:
   channels: []
   urls:
+    - https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit
     - https://docs.google.com/document/d/1r6V9E4ClOyfgKf-ruEFoEJDyYuc6uc5w1nDfXbX2OBM/edit
     - https://docs.ci.openshift.org/docs/release-oversight/
     - https://docs.ci.openshift.org/docs/release-oversight/the-technical-release-team/
@@ -89,13 +90,13 @@ These three documents directly support the watcher role
 (introduced in Step 6), which is where you'll spend most
 of your first few weeks:
 
-1. **Watcher rotation process document** (introduced in
-   Step 1, used in Step 6) — Re-read the full document
-   now that you understand the tools and workflows. On
-   your first pass you lacked the context to absorb
-   everything; with Steps 3–7 complete, the sections on
-   investigation techniques and escalation procedures
-   will make much more sense.
+1. **[Watcher rotation process document](https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit)**
+   (introduced in Step 1, used in Step 6) — Re-read the
+   full document now that you understand the tools and
+   workflows. On your first pass you lacked the context
+   to absorb everything; with Steps 3–7 complete, the
+   sections on investigation techniques and escalation
+   procedures will make much more sense.
 
 2. **Component Readiness User Guide** (Google Doc) — A
    detailed walkthrough of how to use the CR
@@ -364,7 +365,7 @@ watcher rotation — focus on Priority 1 this week and work
 through the rest over the next two weeks.
 
 **This week (before your first shadow rotation):**
-- Re-read the watcher rotation process document
+- Re-read the [watcher rotation process document](https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit)
   (introduced in Step 1) with fresh eyes
 - Read the Component Readiness User Guide (Google Doc
   linked above)
@@ -395,6 +396,9 @@ documentation.
 
 ## Known References
 
+- Watcher rotation process document:
+  https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit
+  (verified: 2026-06-08)
 - Component Readiness User Guide:
   https://docs.google.com/document/d/1r6V9E4ClOyfgKf-ruEFoEJDyYuc6uc5w1nDfXbX2OBM/edit
   (verified: 2026-06-08)
