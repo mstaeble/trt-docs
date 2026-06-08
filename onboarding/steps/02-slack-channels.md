@@ -202,7 +202,7 @@ while #trt-alert-mco only gets MCO-specific alerts. Teams
 request their own channel by opening a TRT Jira ticket.
 
 You don't need to join every alert channel. As you settle
-into the watcher role (Step 6), you'll learn which ones
+into the watcher role (Step 8), you'll learn which ones
 are most relevant to your triage work.
 
 ### Action

@@ -1,7 +1,7 @@
 ---
-id: 07-processes
+id: 09-processes
 title: Key Processes & Workflows
-order: 7
+order: 9
 audience: new-hire
 
 claims:
@@ -86,13 +86,13 @@ substeps:
 
 ### Context
 
-Step 6 introduced the watcher's role in initiating reverts.
+Step 8 introduced the watcher's role in initiating reverts.
 Here is the full end-to-end workflow TRT follows when a
 product regression is detected.
 
 **Detection:**
 A regression can surface through multiple channels:
-- The Payload Analysis Agent (introduced in Step 6)
+- The Payload Analysis Agent (introduced in Step 8)
   automatically analyzes rejected nightlies and identifies
   candidate PRs (pull requests) with a confidence score
 - A watcher notices a new blocking failure and traces it to
@@ -245,7 +245,7 @@ temporary clone is slow. Pass a local clone with the
 
 **`/ci:payload-revert`** — A command from the
 [ai-helpers](https://github.com/openshift-eng/ai-helpers)
-`ci` plugin (introduced in Step 6) that can automate the
+`ci` plugin (introduced in Step 8) that can automate the
 creation of both the Jira bug and the revert PR for
 high-confidence Payload Analysis Agent candidates.
 
@@ -265,7 +265,7 @@ high-confidence Payload Analysis Agent candidates.
 ### Context
 
 Step 3 introduced Component Readiness as a dashboard, and
-Step 6 covered how watchers use it day-to-day. Here is how
+Step 8 covered how watchers use it day-to-day. Here is how
 the system works under the hood.
 
 Component Readiness compares test pass rates between a
@@ -438,7 +438,7 @@ Jira bug and the CR regression:
 *Method B — Use the Sippy triage UI:*
 - From the test details page in
   [sippy-auth](https://sippy-auth.dptools.openshift.org/sippy-ng/)
-  (introduced in Step 6), click the "triage" button
+  (introduced in Step 8), click the "triage" button
 - Navigate to the "new triage" tab
 - Paste the Jira bug URL and fill in the description and
   triage type (e.g., Product, CIInfra)

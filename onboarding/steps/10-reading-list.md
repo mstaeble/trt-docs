@@ -1,7 +1,7 @@
 ---
-id: 08-reading-list
+id: 10-reading-list
 title: Essential Reading & Documentation
-order: 8
+order: 10
 audience: new-hire
 
 claims:
@@ -87,11 +87,11 @@ prioritized by impact on your daily work.
 **Priority 1 — read this week:**
 
 These three documents directly support the watcher role
-(introduced in Step 6), which is where you'll spend most
+(introduced in Step 8), which is where you'll spend most
 of your first few weeks:
 
 1. **[Watcher rotation process document](https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit)**
-   (introduced in Step 1, used in Step 6) — Re-read the
+   (introduced in Step 1, used in Step 8) — Re-read the
    full document now that you understand the tools and
    workflows. On your first pass you lacked the context
    to absorb everything; with Steps 3–7 complete, the
@@ -124,7 +124,7 @@ is a Google Doc maintained by the TRT team. It covers:
 - How to interpret the CR matrix — what red, green, and
   grey cells mean in context
 - How to navigate from the main grid to specific test
-  failures (expanding on the workflow from Step 7)
+  failures (expanding on the workflow from Step 9)
 - How triage records work — creating, editing, and
   resolving them in
   [sippy-auth](https://sippy-auth.dptools.openshift.org/sippy-ng/)
@@ -171,7 +171,7 @@ new watcher):
    How the regression detection system works. Supplements
    the User Guide above with technical details on the
    statistical methodology (covered conceptually in
-   Step 7).
+   Step 9).
 
 3. [Payload Testing](https://docs.ci.openshift.org/docs/release-oversight/payload-testing/) —
    How the Release Controller (introduced in Step 3)
@@ -198,7 +198,7 @@ week once you're settling into the watcher role:
    availability) is measured in CI test clusters. Includes
    sub-pages on data architecture, aggregated disruption,
    and code implementation. Relevant for the disruption
-   review that TRT holds biweekly (introduced in Step 6).
+   review that TRT holds biweekly (introduced in Step 8).
 
 6. [Tooling](https://docs.ci.openshift.org/docs/release-oversight/tooling/) —
    Links and descriptions for all tools available for
@@ -209,7 +209,7 @@ week once you're settling into the watcher role:
 7. [Troubleshooting Failures](https://docs.ci.openshift.org/docs/release-oversight/troubleshooting-failures/) —
    A practical guide to diagnosing Prow (introduced in
    Step 3) job failures. Complements the investigation
-   techniques from Step 7.
+   techniques from Step 9.
 
 8. [Pull Request Testing](https://docs.ci.openshift.org/docs/release-oversight/pull-request-testing/) —
    How presubmit testing works and the `/payload`
@@ -249,7 +249,7 @@ overview and data ingestion architecture. Then read:
 **[openshift-eng/ci-test-mapping](https://github.com/openshift-eng/ci-test-mapping)
 README** — Explains how tests are mapped to Jira
 components for Component Readiness (CR workflow from
-Step 7). Key details:
+Step 9). Key details:
 - How to handle test renames (adding entries to
   `test-renames.yaml` to preserve history)
 - How to onboard new components — the process requires

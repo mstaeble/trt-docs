@@ -1,7 +1,7 @@
 ---
-id: 09-thirty-day-goals
+id: 11-thirty-day-goals
 title: 30-Day Goals
-order: 9
+order: 11
 audience: new-hire
 
 claims:
@@ -107,7 +107,7 @@ By the end of your first week, you should have:
   pull secret) — Step 5
 - Successfully logged into the CI cluster and run
   `oc adm release info` against a recent payload — Step 5
-- Started reading the Priority 1 documents from Step 8
+- Started reading the Priority 1 documents from Step 10
   (watcher rotation doc, Component Readiness User Guide)
 
 **Measurable check:** You can navigate to the
@@ -134,10 +134,10 @@ By the end of your second week, you should have:
   dashboard (set up in Step 3) with your buddy and
   identified current regressions
 - Observed or discussed at least one revert workflow
-  (introduced in Step 7) — either a live one or a recent
+  (introduced in Step 9) — either a live one or a recent
   example from #forum-ocp-release-oversight (joined in
   Step 2)
-- Finished the Priority 1 reading from Step 8
+- Finished the Priority 1 reading from Step 10
 
 **Measurable check:** You can explain the difference
 between a blocking and informing verification job, what
@@ -163,11 +163,11 @@ successful shadow looks like:
   [watcher rotation process document](https://docs.google.com/document/d/1h5BDGJDX1_WyRfX81dvzEgiUg1gYDtfiYcylEjl3LK4/edit)
   (introduced in Step 1) one more time
 - Set up your browser with the watcher's daily dashboard
-  tabs from Step 6
+  tabs from Step 8
 
 **During the rotation:**
 - Follow along as the watcher performs the daily checks
-  (Step 6): payload status, Component Readiness, disruption
+  (Step 8): payload status, Component Readiness, disruption
   dashboard
 - Ask the watcher to narrate their decision-making: "Why
   did you investigate that test?" "How did you decide this
@@ -178,7 +178,7 @@ successful shadow looks like:
   payload back to specific PRs (pull requests)
 - If a triage action is needed, watch the watcher file the
   Jira bug and link it to the Component Readiness
-  regression (Step 7)
+  regression (Step 9)
 
 **After the rotation:**
 - Write down what surprised you or confused you
@@ -200,16 +200,16 @@ By the end of your third week, you should have:
   shoulder, but reachable for questions)
 - Performed the daily watcher checks independently:
   Release Controller status, Component Readiness review,
-  disruption dashboard scan (all from Step 6)
+  disruption dashboard scan (all from Step 8)
 - Triaged at least one Component Readiness regression
   end-to-end: investigated the failure, determined
   whether it's a real regression or infrastructure noise,
   and either filed a Jira bug or confirmed an existing
-  triage record (Step 7)
+  triage record (Step 9)
 - Posted at least one update in
   #forum-ocp-release-oversight (joined in Step 2) about
   payload status or a regression you investigated
-- Started reading the Week 2 documents from your Step 8
+- Started reading the Week 2 documents from your Step 10
   reading plan (docs.ci.openshift.org deep dive, repo
   READMEs)
 
@@ -233,7 +233,7 @@ By the end of your fourth week, you should have:
   issues that arise with increasing confidence
 - Participated in a revert workflow in some capacity:
   opened a revert PR using revertomatic (introduced in
-  Step 7), reviewed someone else's revert, or assisted
+  Step 9), reviewed someone else's revert, or assisted
   the watcher with a revert decision
 - Contributed at least one fix to this onboarding guide
   — either something you noticed during your own
@@ -244,7 +244,7 @@ By the end of your fourth week, you should have:
   recurring meetings: bug triage, disruption review, or
   team standup
 - Read the Improving CI Signal enhancement proposal
-  from your Step 8 reading plan to understand the
+  from your Step 10 reading plan to understand the
   design rationale behind TRT's approach
 
 **Measurable check:** When a payload is rejected, you can
@@ -308,10 +308,10 @@ settle into the role:
   (explored in Step 4) — a bug fix, dashboard improvement,
   or test coverage addition
 - Onboard a new component to Component Readiness by
-  working with a component team (process from Step 7)
+  working with a component team (process from Step 9)
 - Shadow the release process through a milestone
   transition (Feature Freeze, Code Freeze, or GA —
-  from Step 7)
+  from Step 9)
 - Update or add a test mapping in
   [openshift-eng/ci-test-mapping](https://github.com/openshift-eng/ci-test-mapping)
   (explored in Step 4)

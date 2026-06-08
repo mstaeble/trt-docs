@@ -45,30 +45,30 @@ steps:
     description: >
       CLI tools, access requests, and workstation setup.
 
-  - id: 06-watcher-role
+  - id: 08-watcher-role
     title: The Watcher Role
-    file: steps/06-watcher-role.md
+    file: steps/08-watcher-role.md
     audience: new-hire
     description: >
       What you monitor, how, when, and what actions to take.
 
-  - id: 07-processes
+  - id: 09-processes
     title: Key Processes & Workflows
-    file: steps/07-processes.md
+    file: steps/09-processes.md
     audience: new-hire
     description: >
       Revert flow, Component Readiness, release cycle milestones.
 
-  - id: 08-reading-list
+  - id: 10-reading-list
     title: Essential Reading & Documentation
-    file: steps/08-reading-list.md
+    file: steps/10-reading-list.md
     audience: new-hire
     description: >
       Prioritized reading list of docs, guides, and references.
 
-  - id: 09-thirty-day-goals
+  - id: 11-thirty-day-goals
     title: 30-Day Goals
-    file: steps/09-thirty-day-goals.md
+    file: steps/11-thirty-day-goals.md
     audience: new-hire
     description: >
       Concrete milestones for the first month.

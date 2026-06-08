@@ -1,7 +1,7 @@
 ---
-id: 06-watcher-role
+id: 08-watcher-role
 title: The Watcher Role
-order: 6
+order: 8
 audience: new-hire
 
 claims:
@@ -204,7 +204,7 @@ statistically significant regressions compared to the
 baseline release. Your job: investigate red cells,
 determine the root cause, and file Jira tickets against
 the owning team. The full triage workflow is covered in
-Step 7.
+Step 9.
 
 As a watcher, you'll use the authenticated Sippy instance
 ([sippy-auth](https://sippy-auth.dptools.openshift.org/sippy-ng/))
@@ -292,7 +292,7 @@ The revert process at a high level:
    aware
 
 The full revert workflow — including tooling and
-templates — is covered in detail in Step 7.
+templates — is covered in detail in Step 9.
 
 ---
 

@@ -227,7 +227,7 @@ parallel jobs), and orchestration code lives.
 **`pkg/monitortests/`** — Monitoring tests that observe
 cluster behavior during test runs (e.g. tracking API
 server disruption, operator restarts). TRT uses this
-data for disruption analysis (covered in Step 6).
+data for disruption analysis (covered in Step 8).
 
 **`pkg/test/extensions/`** — The OTE (OpenShift Tests
 Extension) framework. OTE is an evolving model where
@@ -293,7 +293,7 @@ TRT fully owns two additional repositories:
 — The source code for the Sippy dashboard you explored
 in Step 3. Sippy is a Go application that ingests CI job
 results and provides Component Readiness analysis
-(regression detection — covered in Step 7), test pass
+(regression detection — covered in Step 9), test pass
 rate trends, and release readiness assessments. TRT
 members submit PRs directly to this repo for feature
 development and bug fixes.
