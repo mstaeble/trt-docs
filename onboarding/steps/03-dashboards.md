@@ -99,13 +99,13 @@ triaging regressions in Component Readiness (creating
 triage records, linking test failures to Jira bugs),
 filing bugs directly from test detail pages, and using
 Sippy Chat (an AI tool for querying CI data — covered in
-Step 6). As a rule of thumb: if you're just looking,
+Step 8). As a rule of thumb: if you're just looking,
 the public instance works; if you're taking action,
 you need sippy-auth.
 
 You'll use Component Readiness extensively in the watcher
-role (Step 6) and learn its full triage workflow in
-Step 7.
+role (Step 8) and learn its full triage workflow in
+Step 9.
 
 ---
 
@@ -232,7 +232,7 @@ including:
 - **Disruption** — Tracks network disruption (connection
   drops, API server unavailability) in CI test clusters.
   TRT monitors this continuously through the watcher role
-  (Step 6) and holds a formal biweekly review to file bugs
+  (Step 8) and holds a formal biweekly review to file bugs
   for severe regressions.
 - **Watch Counts** — Shows CI activity levels: how many
   jobs are queued, running, and completing. Useful for
@@ -290,7 +290,7 @@ created.
 
 The full triage workflow — including how to write
 effective bug reports and engage component teams — is
-covered in Step 7.
+covered in Step 9.
 
 ---
 

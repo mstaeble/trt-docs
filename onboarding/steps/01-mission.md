@@ -164,7 +164,7 @@ Two key roles within TRT:
 **Watcher** — A rotating weekly role with hands-on-keyboard
 responsibility for triaging CI problems in real time. This
 is the role you'll learn first and is covered in detail in
-Step 6.
+Step 8.
 
 **Patch Manager** — Rotated among staff engineers, focused
 on timely patch releases for older supported versions and
@@ -172,7 +172,7 @@ ensuring z-stream (patch) nightlies are produced reliably.
 
 The long-term goal is for component teams to self-monitor
 via Component Readiness (a regression detection system —
-covered in Step 7), with TRT providing oversight.
+covered in Step 9), with TRT providing oversight.
 
 ---
 
@@ -214,7 +214,7 @@ biweekly and adjustments (PTO, swaps) are coordinated in
 This is the single most valuable thing you can do in your
 first week. Watching a watcher work gives you context that
 no document can provide. The watcher role is covered in
-detail in Step 6, but observing it early accelerates
+detail in Step 8, but observing it early accelerates
 everything else.
 
 ---

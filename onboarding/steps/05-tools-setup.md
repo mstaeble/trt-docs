@@ -237,7 +237,7 @@ you may not need the `-a` flag if you're already logged
 in to the CI registry.
 
 You'll use these commands extensively during the watcher
-role (Step 6) to investigate which commits are in
+role (Step 8) to investigate which commits are in
 rejected payloads.
 
 ---
@@ -259,7 +259,7 @@ As a TRT engineer, you need access to `app.ci` for:
 - Inspecting release payload resources
 - Viewing CI job configurations and state
 - Debugging CI infrastructure issues during your watcher
-  rotation (Step 6)
+  rotation (Step 8)
 
 Access is available to all Red Hat employees via SSO
 (Single Sign-On). No special Rover group is needed for
@@ -388,7 +388,7 @@ Full documentation and examples:
 
 You'll use these commands when validating whether a
 specific change causes (or fixes) a CI regression.
-During the watcher role (Step 6), payload commands are
+During the watcher role (Step 8), payload commands are
 a key tool for verifying fixes and reverts.
 
 ---
