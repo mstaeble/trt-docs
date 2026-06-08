@@ -53,6 +53,14 @@ steps:
       Local development setup for Go projects, working with
       TRT-owned repos, PR workflow conventions.
 
+  - id: 07-ai-tools
+    title: AI Tools
+    file: steps/07-ai-tools.md
+    audience: new-hire
+    description: >
+      Claude, Chai Bot, and AI-assisted workflows for
+      TRT engineering and oversight work.
+
   - id: 08-watcher-role
     title: The Watcher Role
     file: steps/08-watcher-role.md
