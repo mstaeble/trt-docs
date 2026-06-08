@@ -98,7 +98,7 @@ After the reference card is posted:
 2. If there is a next step, tell the user:
 
    "You've completed [current step title]. To continue,
-   start a new chat thread and paste:
+   start a **new chat thread** and paste:
 
    > Start TRT onboarding Step [N] from the repo [repo name]"
 
@@ -108,6 +108,12 @@ After the reference card is posted:
 
 3. If there is no next step (final step), congratulate the
    user on completing onboarding
+
+**IMPORTANT: Each step MUST run in its own chat thread.**
+The bot has no memory across threads, so continuing in the
+same thread will lose context. NEVER tell the user to "say
+Start Step N" or imply they can continue in the current
+thread. Always direct them to start a new chat thread.
 
 ## Reference Card
 
