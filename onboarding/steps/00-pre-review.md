@@ -38,17 +38,35 @@ Start a Chai Bot DM thread and paste:
 > 2. Verify each claim against live state — check that
 >    channels exist, URLs are reachable, repos exist, and
 >    tools are available
-> 3. Verify the accuracy of all substep content by
->    researching each topic against current data sources
->    (Slack conversations, Jira, GitHub, org data). This
->    is the only time research is performed — during the
->    onboarding steps themselves, content is presented
+> 3. Verify the accuracy of all substep content — not just
+>    claims, but every factual statement, description,
+>    and recommended workflow. For each substep:
+>    a. Independently research the topic against current
+>       data sources (Slack, Jira, GitHub, org data)
+>    b. Compare what you find to what the step says —
+>       look for contradictions, not just confirmations
+>    c. Check whether the described workflow is still the
+>       team's current practice (tools get replaced,
+>       processes evolve, team responsibilities shift)
+>    d. Verify that repos, tools, and resources are
+>       described accurately — not just that they exist,
+>       but that the description matches what they
+>       actually are and who owns them
+>    This is the only time research is performed — during
+>    the onboarding steps themselves, content is presented
 >    as written without additional research, so it must
 >    be accurate before the new hire starts.
 > 4. Check the Known References section for any verified
 >    dates older than 90 days
-> 5. Search recent TRT Slack threads, Jira tickets, and
->    GitHub activity for topics not covered in any step file
+> 5. Search for gaps and staleness in the guide's coverage:
+>    a. Search recent TRT Slack threads, Jira tickets, and
+>       GitHub activity for topics not covered in any step
+>    b. Check whether any tools, processes, or
+>       responsibilities covered in the guide have been
+>       deprecated, replaced, or significantly changed
+>    c. Look for new team practices, tools, or workflows
+>       that have been adopted since the guide was last
+>       updated
 >
 > Produce a report with four sections:
 > - ✅ Verified — claims and content that match live state
@@ -84,9 +102,10 @@ and provisioning can take 2-3 days.
 - Add to Google Group:
   [openshift-technical-release-staff](https://groups.google.com/a/redhat.com/g/openshift-technical-release-staff/about)
 - Add to Slack: #forum-release-oversight-staff (private)
-
-As future onboarding steps are developed, additional access
-requirements should be added to this list.
+- Obtain Sippy BigQuery credential file (Google Service
+  Account) — ask the TRT team lead
+- Complete the Claude Code access flow (AI policy review +
+  acknowledgment form) — see #help-rh-code-assist
 
 ## When to Run This
 
