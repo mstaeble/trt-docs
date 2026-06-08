@@ -346,22 +346,44 @@ You can generally deprioritize:
 
 **Step 1b: Drill down to specific test failures**
 
-Clicking a red cell in the grid adds a filter to the same
-view — it does not take you directly to test results.
-Instead, use the *Regressed Tests* table:
+To investigate a specific regression, you need to reach
+the *Test Details* page for the failing test.
 
-1. At the top of the Component Readiness report, click
-   "Regressed Tests" to open the list of all currently
-   regressed tests
-2. Optionally filter by component to narrow the list
-3. Click a test name to open its *Test Details* page
+*Recommended path:*
 
-The Test Details page shows:
+1. Click a component name in the main grid to open that
+   component's detail view
+2. From the component view, click "Regressed Tests" on
+   the right side of the top banner
+3. In the modal that opens, click the icon in the
+   *Status* column for the test you want to investigate
+   — this navigates to the Test Details page
+
+> **Note:** The "Regressed Tests" button is also available
+> from the main landing page, but that version does not
+> provide clickable links to test details. Always open it
+> from within a component's view.
+
+*Alternative — grid drilling:*
+
+1. Click a red cell in the main grid to drill down from
+   component → capability → individual tests
+2. Keep clicking to navigate through the hierarchy until
+   you reach the test level
+3. From the test-level view, click through to the Test
+   Details page
+
+> Grid drilling can occasionally produce errors (a known
+> React state timing issue). If you get an error, try
+> refreshing or use the Regressed Tests path above.
+
+The *Test Details* page shows:
 - Pass/fail statistics comparing the sample period
   (current) to the basis period (historical baseline)
 - The Fisher's Exact Test probability score
-- A list of specific failing Prow job runs with direct
-  links to logs and artifacts
+- A per-job breakdown showing which jobs are failing
+- Links to individual Prow job runs for log inspection
+- Associated Jira bugs and a button to file a new bug
 
 Review the failure pattern across job runs: is the test
 failing consistently on all platforms, or only on specific
