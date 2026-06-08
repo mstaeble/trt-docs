@@ -93,8 +93,9 @@ for user-specific preferences.
   `export CLOUD_ML_REGION=global`
 - Complete the Red Hat access flow via
   #help-rh-code-assist if you haven't already
-- Launch Claude Code in a TRT repo:
-  `cd ~/src/sippy && claude`
+- Launch Claude Code in a TRT repo — navigate to your
+  Sippy checkout (cloned in Step 6) and run:
+  `claude`
 - Read the repo's `CLAUDE.md` to see the AI context
 
 > Note for Step 0: Claude Code access requires
