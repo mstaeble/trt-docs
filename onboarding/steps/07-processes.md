@@ -330,8 +330,10 @@ triage follows this workflow:
   PR or payload
 
 **Step 2: File a Jira bug**
-- Create a bug in the OCPBUGS project with details about
-  the failure, affected platforms, and reproduction steps
+- Create a bug in the
+  [OCPBUGS](https://redhat.atlassian.net/projects/OCPBUGS/)
+  project with details about the failure, affected
+  platforms, and reproduction steps
 - Include the exact test name in the bug description
 
 **Step 3: Link the bug to the regression**
@@ -390,7 +392,8 @@ Component Readiness, it goes through an onboarding process.
 
 **Onboarding steps:**
 1. **Create a Jira component** — Register the component in
-   the OCPBUGS Jira project. Creating a new component
+   the [OCPBUGS](https://redhat.atlassian.net/projects/OCPBUGS/)
+   Jira project. Creating a new component
    requires approval from an OpenShift Staff Engineer.
 
 2. **Map tests to the component** — Use the
