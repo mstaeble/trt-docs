@@ -45,6 +45,14 @@ steps:
     description: >
       CLI tools, access requests, and workstation setup.
 
+  - id: 06-dev-environment
+    title: Development Environment
+    file: steps/06-dev-environment.md
+    audience: new-hire
+    description: >
+      Local development setup for Go projects, working with
+      TRT-owned repos, PR workflow conventions.
+
   - id: 08-watcher-role
     title: The Watcher Role
     file: steps/08-watcher-role.md
