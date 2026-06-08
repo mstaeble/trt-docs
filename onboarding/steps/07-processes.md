@@ -346,23 +346,25 @@ You can generally deprioritize:
 
 **Step 1b: Drill down to specific test failures**
 
-Start by identifying which tests are regressed, then
-navigate to the Test Details page for investigation.
+To investigate a specific regression, you need to reach
+the *Test Details* page for the failing test.
 
-*Identify regressed tests:*
+*Recommended path:*
 
-Click the "Regressed Tests" button on the right side of
-the top banner. This opens a modal listing all currently
-regressed tests. Use it to see which tests need attention
-and to copy test IDs — but note that the test names in
-this modal are not clickable links (despite appearing
-in the source code as React Router Links; this is a known
-UI issue).
+1. Click a component name in the main grid to open that
+   component's detail view
+2. From the component view, click "Regressed Tests" on
+   the right side of the top banner
+3. In the modal that opens, click the icon in the
+   *Status* column for the test you want to investigate
+   — this navigates to the Test Details page
 
-*Navigate to the Test Details page:*
+> **Note:** The "Regressed Tests" button is also available
+> from the main landing page, but that version does not
+> provide clickable links to test details. Always open it
+> from within a component's view.
 
-To reach the Test Details page for a specific test, drill
-through the grid:
+*Alternative — grid drilling:*
 
 1. Click a red cell in the main grid to drill down from
    component → capability → individual tests
@@ -373,7 +375,7 @@ through the grid:
 
 > Grid drilling can occasionally produce errors (a known
 > React state timing issue). If you get an error, try
-> refreshing or navigating from a different cell.
+> refreshing or use the Regressed Tests path above.
 
 The *Test Details* page shows:
 - Pass/fail statistics comparing the sample period
