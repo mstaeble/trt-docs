@@ -183,14 +183,46 @@ button because the button only appears if you have a
 personal fork of the repository. revertomatic also ensures
 consistent template formatting across all TRT reverts.
 
-Ask your onboarding buddy for current installation
-instructions — the tool's location has changed over time.
+**Installation:**
 
-**`/ci:payload-revert`** — A Slack command (introduced in
-Step 6) that can automate the creation of both the Jira
-bug and the revert PR for high-confidence Payload Analysis
-Agent candidates. Type it in any Slack message to get
-started.
+revertomatic requires
+[Go](https://go.dev/doc/install) and a GitHub personal
+access token. Create a
+[personal access token](https://github.com/settings/tokens)
+with `read:org`, `repo`, and `user` scopes, then:
+
+```
+export GITHUB_TOKEN="<your-token>"
+git clone https://github.com/stbenjam/revertomatic.git
+cd revertomatic
+go build -o revertomatic .
+# Optional: move the binary onto your PATH
+mv revertomatic ~/go/bin/
+```
+
+For large repositories (e.g., openshift/kubernetes), a
+temporary clone is slow. Pass a local clone with the
+`-l`, `-u`, and `-r` flags:
+
+- `-l` — Path to a local clone of the repository
+- `-u` — Name of the upstream remote (default: "upstream")
+- `-r` — Name of your fork remote (default: "origin")
+
+> **Alternative:** If you use
+> [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview)
+> or Cursor, the `ci` plugin from
+> [openshift-eng/ai-helpers](https://github.com/openshift-eng/ai-helpers)
+> provides `/ci:revert-pr <pr-url> <jira-ticket>` — a
+> reimplementation of the revertomatic workflow as an
+> AI-assisted command. Install it with:
+> `/plugin marketplace add openshift-eng/ai-helpers`
+> then `/plugin install ci@ai-helpers`.
+
+**`/ci:payload-revert`** — A command from the
+[ai-helpers](https://github.com/openshift-eng/ai-helpers)
+`ci` plugin (introduced in Step 6) that can automate the
+creation of both the Jira bug and the revert PR for
+high-confidence Payload Analysis Agent candidates.
 
 **Conventions:**
 - Revert PR titles must include a Jira reference (e.g.,
