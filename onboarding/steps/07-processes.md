@@ -346,22 +346,40 @@ You can generally deprioritize:
 
 **Step 1b: Drill down to specific test failures**
 
-Clicking a red cell in the grid adds a filter to the same
-view — it does not take you directly to test results.
-Instead, use the *Regressed Tests* table:
+There are two paths to reach the *Test Details* page for
+a specific regressed test:
 
-1. At the top of the Component Readiness report, click
-   "Regressed Tests" to open the list of all currently
-   regressed tests
-2. Optionally filter by component to narrow the list
-3. Click a test name to open its *Test Details* page
+*Path A — Regressed Tests modal (recommended):*
 
-The Test Details page shows:
+1. Click the "Regressed Tests" button on the right side
+   of the top banner to open the modal
+2. Find the test you want to investigate — click the
+   *test name* (it is a link to the Test Details page,
+   though it may not be visually styled as one)
+3. If the test name is not clickable in your version,
+   expand the row, copy the test ID, and use it to
+   navigate manually (see Path B below)
+
+*Path B — Grid drilling:*
+
+1. Click a red cell in the main grid to drill down from
+   component → capability → individual tests
+2. Keep clicking to navigate through the hierarchy until
+   you reach the test level
+3. From the test-level view, click through to the Test
+   Details page
+
+> Grid drilling can be slow and occasionally buggy (a
+> known React state issue can cause errors). If you get
+> an error, try the Regressed Tests modal instead.
+
+The *Test Details* page shows:
 - Pass/fail statistics comparing the sample period
   (current) to the basis period (historical baseline)
 - The Fisher's Exact Test probability score
-- A list of specific failing Prow job runs with direct
-  links to logs and artifacts
+- A per-job breakdown showing which jobs are failing
+- Links to individual Prow job runs for log inspection
+- Associated Jira bugs and a button to file a new bug
 
 Review the failure pattern across job runs: is the test
 failing consistently on all platforms, or only on specific
