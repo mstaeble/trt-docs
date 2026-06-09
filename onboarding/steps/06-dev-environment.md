@@ -114,7 +114,7 @@ requires both Go and Node.js:
 - `make` — builds the all-in-one binary
 - `make sippy` — builds just the Go backend
 - Frontend dev: `cd sippy-ng && npm start` runs the UI
-  on `localhost:3000` with hot-reloading
+  on `localhost:3000/sippy-ng/` with hot-reloading
 
 **[openshift-eng/ci-test-mapping](https://github.com/openshift-eng/ci-test-mapping)**
 — Maps test names to component owners. Standard Go
@@ -204,9 +204,9 @@ for faster feedback — the Go backend on `:8080` and
   from a production backup
 - Start the server: `./sippy serve` with the flags
   documented in DEVELOPMENT.md
-- Verify the UI is accessible at `http://localhost:8080`
-  (embedded mode) or `http://localhost:3000`
-  (separate frontend)
+- Verify the UI is accessible at
+  `http://localhost:8080/sippy-ng/` (embedded mode) or
+  `http://localhost:3000/sippy-ng/` (separate frontend)
 
 > Note for Step 0: BigQuery credential file access may
 > require provisioning. Add to the Access Provisioning
@@ -370,8 +370,8 @@ coding work:
 Optional (if you completed the full Sippy local setup):
 - PostgreSQL and Redis containers are running
 - `./sippy migrate` completed successfully
-- Sippy serves the UI at `localhost:8080` or
-  `localhost:3000`
+- Sippy serves the UI at `localhost:8080/sippy-ng/` or
+  `localhost:3000/sippy-ng/`
 
 ---
 
