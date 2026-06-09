@@ -16,7 +16,7 @@ claims:
     - https://console-openshift-console.apps.ci.l2s4.p1.openshiftapps.com/
     - https://docs.ci.openshift.org/docs/release-oversight/pull-request-testing/
     - https://go.dev/dl/
-    - https://docs.anthropic.com/en/docs/claude-code/overview
+    - https://source.redhat.com/projects_and_programs/ai/ai_tools_and_use_cases
   repos:
     - openshift/release
   tools:
@@ -168,38 +168,24 @@ analysis, query optimization, and CI investigation. It
 runs in your terminal alongside your editor and has full
 access to your local files and shell.
 
-**Access flow at Red Hat:**
-1. Review Red Hat's AI policy and the Claude Code User
-   Guide — links are available in #help-rh-code-assist
-2. Submit the acknowledgment form (linked from the setup
-   resources)
-3. Install Claude Code (see below)
-
 Red Hat provides Claude Code through Google Vertex AI.
-The default model is Sonnet; access to the more powerful
-Opus model requires additional approval due to higher
-cost. For setup questions, ask in #help-rh-code-assist.
+Before you can install and use it, you need to complete
+an access flow (AI policy review and acknowledgment
+form). The
+[Red Hat AI Tools & Use Cases](https://source.redhat.com/projects_and_programs/ai/ai_tools_and_use_cases)
+page has the full prerequisites, installation
+instructions, and setup guide. It also covers other AI
+tools available to Red Hat engineers, such as CodeRabbit.
+
+For setup questions, ask in #help-rh-code-assist.
 
 ### Action
 
-- Install Claude Code:
-  - **Via curl:**
-    `curl -fsSL https://claude.ai/install.sh | bash`
-    (installs to `~/.local/bin/claude`)
-  - **Via npm:**
-    `npm install -g @anthropic-ai/claude-code --ignore-scripts`
-- Set the required environment variable for Red Hat's
-  Vertex AI contract (add to your shell profile):
-  `export CLOUD_ML_REGION=global`
-- Complete the Red Hat access flow via
-  #help-rh-code-assist if you haven't already
+- Go to the
+  [Red Hat AI Tools & Use Cases](https://source.redhat.com/projects_and_programs/ai/ai_tools_and_use_cases)
+  page and follow the instructions to complete the
+  access prerequisites and install Claude Code
 - Verify: `claude --version` shows a version number
-
-> Note for Step 0: Claude Code access requires
-> completing an acknowledgment form. Add to the Access
-> Provisioning checklist: "Complete the Claude Code
-> access flow (AI policy review + acknowledgment form)
-> — see #help-rh-code-assist."
 
 ---
 
@@ -533,8 +519,6 @@ Verify your tools and access are ready:
 - `node --version` outputs a version number
 - `npm --version` outputs a version number
 - `claude --version` outputs a version number
-- The `CLOUD_ML_REGION=global` environment variable is
-  set (check with `echo $CLOUD_ML_REGION`)
 - Your pull secret file exists and is valid JSON
   (`jq . ~/pull-secret.json` succeeds)
 - `oc adm release info quay.io/openshift-release-dev/ocp-release:$(oc version --client -o json | jq -r '.releaseClientVersion')-x86_64`
@@ -569,8 +553,8 @@ Verify your tools and access are ready:
 - Go downloads:
   https://go.dev/dl/
   (verified: 2026-06-09)
-- Claude Code documentation:
-  https://docs.anthropic.com/en/docs/claude-code/overview
+- Red Hat AI Tools & Use Cases:
+  https://source.redhat.com/projects_and_programs/ai/ai_tools_and_use_cases
   (verified: 2026-06-09)
 
 ## Feedback
