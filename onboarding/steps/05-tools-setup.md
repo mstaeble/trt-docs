@@ -27,6 +27,8 @@ claims:
     - go
     - node
     - npm
+    - podman
+    - devcontainer
     - claude
 
 substeps:
@@ -37,6 +39,10 @@ substeps:
   - id: install-dev-tools
     type: action
     summary: "Install Go and Node.js for TRT development"
+
+  - id: install-container-engine
+    type: action
+    summary: "Install Podman for container-based development"
 
   - id: install-claude-code
     type: action
@@ -155,6 +161,45 @@ backend-only builds.
   - **macOS (Homebrew):** `brew install node`
   - **Fedora/RHEL:** `sudo dnf install nodejs npm`
   - Verify: `node --version && npm --version`
+
+---
+
+## Substep: install-container-engine
+
+### Context
+
+A container engine lets you run and build container
+images locally. TRT work requires one for:
+
+- **Devcontainers** — the recommended Sippy development
+  setup (Step 6) runs inside a pre-configured container
+- **Local databases** — running PostgreSQL and Redis in
+  containers for Sippy development (Step 6)
+- **Image inspection** — pulling and examining container
+  images during payload investigations
+
+Podman is the standard container engine for Red Hat
+engineers. It is daemonless (no background service
+required) and rootless (runs without `sudo`).
+
+The **devcontainer CLI** lets you build and run
+devcontainers from the terminal, without needing a
+specific editor. It is an npm package, so Node.js (which
+you installed in the previous substep) is required.
+
+### Action
+
+- Install Podman:
+  - **macOS (Homebrew):** `brew install podman` then
+    initialize and start the Podman machine:
+    `podman machine init && podman machine start`
+  - **Fedora/RHEL:** `sudo dnf install podman`
+    (may already be installed by default)
+- Verify: `podman --version`
+- Test it works: `podman run --rm hello-world`
+- Install the devcontainer CLI:
+  `npm install -g @devcontainers/cli`
+- Verify: `devcontainer --version`
 
 ---
 
@@ -518,6 +563,8 @@ Verify your tools and access are ready:
 - `go version` outputs a version number
 - `node --version` outputs a version number
 - `npm --version` outputs a version number
+- `podman --version` outputs a version number
+- `devcontainer --version` outputs a version number
 - `claude --version` outputs a version number
 - Your pull secret file exists and is valid JSON
   (`jq . ~/pull-secret.json` succeeds)
