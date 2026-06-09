@@ -28,6 +28,7 @@ claims:
     - node
     - npm
     - podman
+    - devcontainer
     - claude
 
 substeps:
@@ -181,6 +182,11 @@ Podman is the standard container engine for Red Hat
 engineers. It is daemonless (no background service
 required) and rootless (runs without `sudo`).
 
+The **devcontainer CLI** lets you build and run
+devcontainers from the terminal, without needing a
+specific editor. It is an npm package, so Node.js (which
+you installed in the previous substep) is required.
+
 ### Action
 
 - Install Podman:
@@ -191,6 +197,9 @@ required) and rootless (runs without `sudo`).
     (may already be installed by default)
 - Verify: `podman --version`
 - Test it works: `podman run --rm hello-world`
+- Install the devcontainer CLI:
+  `npm install -g @devcontainers/cli`
+- Verify: `devcontainer --version`
 
 ---
 
@@ -555,6 +564,7 @@ Verify your tools and access are ready:
 - `node --version` outputs a version number
 - `npm --version` outputs a version number
 - `podman --version` outputs a version number
+- `devcontainer --version` outputs a version number
 - `claude --version` outputs a version number
 - Your pull secret file exists and is valid JSON
   (`jq . ~/pull-secret.json` succeeds)
