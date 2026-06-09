@@ -6,7 +6,6 @@ audience: new-hire
 
 claims:
   urls:
-    - https://go.dev/dl/
     - https://github.com/openshift/sippy/blob/main/DEVELOPMENT.md
     - https://github.com/openshift/sippy/blob/main/.devcontainer/README.md
     - https://docs.ci.openshift.org/docs/architecture/ci-operator/
@@ -20,9 +19,6 @@ claims:
     - openshift-eng/ci-test-mapping
     - openshift/ci-tools
   tools:
-    - go
-    - node
-    - npm
     - podman
     - make
 
@@ -30,7 +26,7 @@ substeps:
   - id: go-dev-setup
     type: action
     group: dev-foundation
-    summary: "Install Go and understand Go module conventions"
+    summary: "Go module conventions used in TRT repos"
 
   - id: repo-dev-patterns
     type: learning
@@ -60,11 +56,11 @@ substeps:
 
 ### Context
 
-TRT's primary repositories — Sippy (explored in Step 4),
-ci-test-mapping, and ci-tools — are Go projects. Go
-is the dominant language across the OpenShift ecosystem,
-and all TRT code contributions will be in Go (backend)
-or TypeScript/React (Sippy frontend).
+You installed Go and Node.js/npm in Step 5. TRT's
+primary repositories — Sippy (explored in Step 4),
+ci-test-mapping, and ci-tools — are Go projects, and
+all TRT code contributions will be in Go (backend) or
+TypeScript/React (Sippy frontend).
 
 Each repository declares its minimum required Go version
 in its `go.mod` file at the repo root.
@@ -75,10 +71,8 @@ declares an older version. For example, if `go.mod` says
 `go 1.25.0` and you have Go 1.26.4 installed, that
 works fine. The reverse does not — if your Go is older
 than what `go.mod` declares, the build will fail. In
-that case, install the latest Go from
-[go.dev/dl](https://go.dev/dl/) or update via your
-package manager (`brew upgrade go` or
-`sudo dnf upgrade golang`).
+that case, update Go via your package manager
+(`brew upgrade go` or `sudo dnf upgrade golang`).
 
 All TRT repos use Go modules with a vendored dependency
 directory (`vendor/`). This means:
@@ -91,16 +85,6 @@ directory (`vendor/`). This means:
 
 ### Action
 
-- Install Go from [go.dev/dl](https://go.dev/dl/) or
-  via your package manager:
-  - **macOS (Homebrew):** `brew install go`
-  - **Fedora/RHEL:** `sudo dnf install golang`
-- Verify your installation: `go version`
-- Install Node.js and npm (required by Sippy's build
-  system, even for backend-only builds):
-  - **macOS (Homebrew):** `brew install node`
-  - **Fedora/RHEL:** `sudo dnf install nodejs npm`
-  - Verify: `node --version && npm --version`
 - Clone Sippy and check its required Go version:
   ```
   git clone https://github.com/openshift/sippy.git
@@ -393,9 +377,6 @@ Optional (if you completed the full Sippy local setup):
 
 ## Known References
 
-- Go downloads:
-  https://go.dev/dl/
-  (verified: 2026-06-08)
 - Sippy DEVELOPMENT.md:
   https://github.com/openshift/sippy/blob/main/DEVELOPMENT.md
   (verified: 2026-06-08)
