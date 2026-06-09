@@ -5,22 +5,17 @@ order: 7
 audience: new-hire
 
 claims:
-  channels:
-    - help-rh-code-assist
   urls:
-    - https://docs.anthropic.com/en/docs/claude-code/overview
     - https://github.com/openshift-eng/ai-helpers
     - https://sippy-auth.dptools.openshift.org/sippy-ng/chat
   repos:
     - openshift-eng/ai-helpers
-  tools:
-    - claude
 
 substeps:
-  - id: claude-code-setup
-    type: action
+  - id: claude-md
+    type: learning
     group: ai-setup
-    summary: "Install Claude Code and complete the access flow"
+    summary: "How CLAUDE.md provides project context to Claude Code"
 
   - id: ai-helpers-plugins
     type: action
@@ -40,69 +35,33 @@ substeps:
     summary: "Verify your AI tools are working"
 ---
 
-## Substep: claude-code-setup
+## Substep: claude-md
 
 ### Context
 
-Claude Code is a terminal-based AI coding assistant that
-TRT engineers use daily for code development, payload
-analysis, query optimization, and CI investigation. It
-runs in your terminal alongside your editor and has full
-access to your local files and shell.
-
-**Access flow at Red Hat:**
-1. Review Red Hat's AI policy and the Claude Code User
-   Guide — links are available in #help-rh-code-assist
-2. Submit the acknowledgment form (linked from the setup
-   resources)
-3. Install Claude Code (see below)
-
-Red Hat provides Claude Code through Google Vertex AI.
-The default model is Sonnet; access to the more powerful
-Opus model requires additional approval due to higher
-cost. For setup questions, ask in #help-rh-code-assist.
-
-**CLAUDE.md — project-level AI context:**
-When Claude Code opens a repository, it automatically
-reads a `CLAUDE.md` file at the repo root. This file
-provides the AI with project-specific guidance:
-architecture invariants, essential build commands, coding
-conventions, and safety rails to prevent common mistakes.
+You installed Claude Code in Step 5. When Claude Code
+opens a repository, it automatically reads a `CLAUDE.md`
+file at the repo root. This file provides the AI with
+project-specific guidance: architecture invariants,
+essential build commands, coding conventions, and safety
+rails to prevent common mistakes.
 
 Many TRT repos (including Sippy) have a `CLAUDE.md`.
 When you start working in a repo, read its `CLAUDE.md`
 to understand what guidance the AI is receiving — it
 also serves as a concise project overview for you.
 
-For your own projects, create a `CLAUDE.md` with
-architecture decisions and essential commands. Smaller,
-more focused files work better than verbose ones. You
-can also create a personal `CLAUDE.local.md` (gitignored)
-for user-specific preferences.
+**What makes a good CLAUDE.md:**
+- Architecture decisions and invariants
+- Essential build and test commands
+- Coding conventions the project follows
+- Common mistakes and how to avoid them
+- Smaller, more focused files work better than verbose
+  ones
 
-### Action
-
-- Install Claude Code:
-  - **Via curl:**
-    `curl -fsSL https://claude.ai/install.sh | bash`
-    (installs to `~/.local/bin/claude`)
-  - **Via npm:**
-    `npm install -g @anthropic-ai/claude-code --ignore-scripts`
-- Set the required environment variable for Red Hat's
-  Vertex AI contract (add to your shell profile):
-  `export CLOUD_ML_REGION=global`
-- Complete the Red Hat access flow via
-  #help-rh-code-assist if you haven't already
-- Launch Claude Code in a TRT repo — navigate to your
-  Sippy checkout (cloned in Step 6) and run:
-  `claude`
-- Read the repo's `CLAUDE.md` to see the AI context
-
-> Note for Step 0: Claude Code access requires
-> completing an acknowledgment form. Add to the Access
-> Provisioning checklist: "Complete the Claude Code
-> access flow (AI policy review + acknowledgment form)
-> — see #help-rh-code-assist."
+You can also create a personal `CLAUDE.local.md`
+(gitignored) for user-specific preferences like editor
+settings or local paths.
 
 ---
 
@@ -110,12 +69,12 @@ for user-specific preferences.
 
 ### Context
 
-The
+You installed Claude Code in Step 5. The
 [ai-helpers](https://github.com/openshift-eng/ai-helpers)
-repository is a marketplace of Claude Code plugins built
-by OpenShift engineering teams. Plugins extend Claude Code
-with domain-specific commands (called "skills") that
-encode team workflows as repeatable AI-assisted actions.
+repository is a marketplace of plugins that extend it
+with domain-specific commands (called "skills") —
+repeatable AI-assisted actions built by OpenShift
+engineering teams.
 
 The most important plugin for TRT is `ci`, which provides
 commands for payload analysis, job failure investigation,
@@ -291,9 +250,6 @@ Verify your AI tools are set up and working:
 
 ## Known References
 
-- Claude Code documentation:
-  https://docs.anthropic.com/en/docs/claude-code/overview
-  (verified: 2026-06-08)
 - ai-helpers repository:
   https://github.com/openshift-eng/ai-helpers
   (verified: 2026-06-08)
