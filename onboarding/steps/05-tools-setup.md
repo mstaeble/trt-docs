@@ -8,12 +8,15 @@ claims:
   channels:
     - forum-ocp-crt
     - forum-ocp-testplatform
+    - help-rh-code-assist
   urls:
     - https://console.redhat.com/openshift/downloads
     - https://console.redhat.com/openshift/install/pull-secret
     - https://github.com/mikefarah/yq
     - https://console-openshift-console.apps.ci.l2s4.p1.openshiftapps.com/
     - https://docs.ci.openshift.org/docs/release-oversight/pull-request-testing/
+    - https://go.dev/dl/
+    - https://docs.anthropic.com/en/docs/claude-code/overview
   repos:
     - openshift/release
   tools:
@@ -21,11 +24,23 @@ claims:
     - jq
     - yq
     - cluster-bot
+    - go
+    - node
+    - npm
+    - claude
 
 substeps:
   - id: install-cli-tools
     type: action
     summary: "Install the OpenShift CLI and supporting tools"
+
+  - id: install-dev-tools
+    type: action
+    summary: "Install Go and Node.js for TRT development"
+
+  - id: install-claude-code
+    type: action
+    summary: "Install Claude Code and complete the access flow"
 
   - id: pull-secret
     type: action
@@ -116,6 +131,75 @@ commonly used in TRT is the Go-based
   - **Fedora/RHEL:** `sudo dnf install yq`
   - Verify it's the Go-based version: `yq --version`
     should show `mikefarah/yq`
+
+---
+
+## Substep: install-dev-tools
+
+### Context
+
+TRT's primary repositories — Sippy, ci-test-mapping, and
+ci-tools — are Go projects. Go is the dominant language
+across the OpenShift ecosystem. You'll also need Node.js
+and npm, which Sippy's build system requires even for
+backend-only builds.
+
+### Action
+
+- Install Go from [go.dev/dl](https://go.dev/dl/) or
+  via your package manager:
+  - **macOS (Homebrew):** `brew install go`
+  - **Fedora/RHEL:** `sudo dnf install golang`
+  - Verify: `go version`
+- Install Node.js and npm:
+  - **macOS (Homebrew):** `brew install node`
+  - **Fedora/RHEL:** `sudo dnf install nodejs npm`
+  - Verify: `node --version && npm --version`
+
+---
+
+## Substep: install-claude-code
+
+### Context
+
+Claude Code is a terminal-based AI coding assistant that
+TRT engineers use daily for code development, payload
+analysis, query optimization, and CI investigation. It
+runs in your terminal alongside your editor and has full
+access to your local files and shell.
+
+**Access flow at Red Hat:**
+1. Review Red Hat's AI policy and the Claude Code User
+   Guide — links are available in #help-rh-code-assist
+2. Submit the acknowledgment form (linked from the setup
+   resources)
+3. Install Claude Code (see below)
+
+Red Hat provides Claude Code through Google Vertex AI.
+The default model is Sonnet; access to the more powerful
+Opus model requires additional approval due to higher
+cost. For setup questions, ask in #help-rh-code-assist.
+
+### Action
+
+- Install Claude Code:
+  - **Via curl:**
+    `curl -fsSL https://claude.ai/install.sh | bash`
+    (installs to `~/.local/bin/claude`)
+  - **Via npm:**
+    `npm install -g @anthropic-ai/claude-code --ignore-scripts`
+- Set the required environment variable for Red Hat's
+  Vertex AI contract (add to your shell profile):
+  `export CLOUD_ML_REGION=global`
+- Complete the Red Hat access flow via
+  #help-rh-code-assist if you haven't already
+- Verify: `claude --version` shows a version number
+
+> Note for Step 0: Claude Code access requires
+> completing an acknowledgment form. Add to the Access
+> Provisioning checklist: "Complete the Claude Code
+> access flow (AI policy review + acknowledgment form)
+> — see #help-rh-code-assist."
 
 ---
 
@@ -445,6 +529,12 @@ Verify your tools and access are ready:
 - `jq --version` outputs a version number
 - `yq --version` outputs a version number and shows
   `mikefarah/yq`
+- `go version` outputs a version number
+- `node --version` outputs a version number
+- `npm --version` outputs a version number
+- `claude --version` outputs a version number
+- The `CLOUD_ML_REGION=global` environment variable is
+  set (check with `echo $CLOUD_ML_REGION`)
 - Your pull secret file exists and is valid JSON
   (`jq . ~/pull-secret.json` succeeds)
 - `oc adm release info quay.io/openshift-release-dev/ocp-release:$(oc version --client -o json | jq -r '.releaseClientVersion')-x86_64`
@@ -476,6 +566,12 @@ Verify your tools and access are ready:
 - CI Docs - Pull Request Testing:
   https://docs.ci.openshift.org/docs/release-oversight/pull-request-testing/
   (verified: 2026-06-05)
+- Go downloads:
+  https://go.dev/dl/
+  (verified: 2026-06-09)
+- Claude Code documentation:
+  https://docs.anthropic.com/en/docs/claude-code/overview
+  (verified: 2026-06-09)
 
 ## Feedback
 
