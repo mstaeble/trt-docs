@@ -15,7 +15,8 @@ claims:
     - control-plane-cr
     - announce-testplatform
     - forum-ocp-release
-  urls: []
+  urls:
+    - https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=5922&projectKey=TRT
   repos:
     - openshift/continuous-release-jobs
     - openshift/release
@@ -29,6 +30,14 @@ substeps:
   - id: communication-norms
     type: learning
     summary: "Understand team communication norms"
+
+  - id: sprint-cadence
+    type: learning
+    summary: "Understand the sprint structure and team ceremonies"
+
+  - id: jira-board
+    type: action
+    summary: "Explore the TRT Jira board and create your onboarding tracker"
 
   - id: sister-team-channels
     type: action
@@ -113,6 +122,80 @@ in the relevant channel rather than waiting for a meeting.
 openshift-technical-release-staff Google Group for
 administrative purposes like calendar invites and document
 ownership. Slack covers day-to-day communication.
+
+---
+
+## Substep: sprint-cadence
+
+### Context
+
+TRT runs **three-week sprints**. Here is the recurring
+meeting cadence within each sprint:
+
+**Daily standup** — 9:00 AM ET, every weekday. A brief
+sync where the team shares progress, flags blockers,
+and coordinates handoffs. As a new hire, use this to hear
+what the team is focused on and ask questions.
+
+**Monday meeting** (rotating focus) — The agenda rotates
+with the sprint cycle:
+- **Week 1: Jira refinement** — Review and scope incoming
+  work items, clarify acceptance criteria, and estimate
+  effort
+- **Week 2: Bug triage** — Triage bugs owned by TRT and
+  bugs TRT has opened against other teams. This is where
+  you'll see how the team tracks cross-team issues.
+- **Week 3: Sprint planning** — Select work for the
+  upcoming sprint based on the refined backlog and team
+  capacity
+
+**Wednesday meeting** (weekly) — A flexible time block
+reserved for team architecture discussions, onboarding
+sessions, demos of new tooling, and general
+announcements. When external teams need to present to
+TRT, they join this meeting.
+
+**Sprint retrospective** (every 3 weeks, Thursdays) —
+End-of-sprint reflection on what went well, what didn't,
+and what to improve.
+
+All meetings are on the AOS Main Calendar via the
+openshift-technical-release-staff Google Group. If you
+completed the verify-access substep above, you should
+already see them on your calendar.
+
+---
+
+## Substep: jira-board
+
+### Context
+
+TRT tracks its work on a Kanban board in the
+[TRT Jira project](https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=5922&projectKey=TRT).
+Issues flow through columns like Backlog, Refinement,
+In Progress, and Done. The Monday rotation meetings
+(refinement, bug triage, planning) drive items through
+these stages across the sprint.
+
+As an onboarding exercise, you will create a single
+ticket to track your onboarding progress. This gives
+you hands-on experience with the board and a place to
+log notes and questions as you work through each step.
+
+### Action
+
+- Open the
+  [TRT Kanban board](https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=5922&projectKey=TRT)
+  and browse the current items to get a feel for what
+  the team is working on
+- Create a new ticket in the TRT project:
+  - Type: Task
+  - Summary: "Onboarding: [Your Name]"
+  - Add a comment noting which onboarding step you are
+    currently on
+- As you complete future steps, add a comment to your
+  onboarding ticket noting what you finished and any
+  questions that came up
 
 ---
 
@@ -274,6 +357,8 @@ Confirm you have joined or been added to:
 - Rover group: openshift-technical-release-team
 - Rover group: trt-sippy-postgresql
 - Google Group: openshift-technical-release-staff
+- Created your onboarding tracking ticket in the TRT
+  Jira project
 
 ---
 
@@ -294,6 +379,8 @@ Confirm you have joined or been added to:
   (verified: 2026-06-05)
 - Release notifications: #forum-ocp-release
   (verified: 2026-06-05)
+- TRT Kanban board: https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=5922&projectKey=TRT
+  (verified: 2026-06-09)
 - Team alias: @team-technical-release
   (verified: 2026-06-05)
 - Google Group: openshift-technical-release-staff

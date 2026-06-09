@@ -21,8 +21,9 @@ steps:
     file: steps/02-slack-channels.md
     audience: new-hire
     description: >
-      Channels to join, channel norms, and access
-      verification (Rover groups, Google Groups).
+      Channels to join, channel norms, sprint structure,
+      Jira board orientation, and access verification
+      (Rover groups, Google Groups).
 
   - id: 03-dashboards
     title: Dashboards & URLs
