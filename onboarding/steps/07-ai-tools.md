@@ -8,6 +8,7 @@ claims:
   urls:
     - https://github.com/openshift-eng/ai-helpers
     - https://sippy-auth.dptools.openshift.org/sippy-ng/chat
+    - https://github.com/golang/go/issues/71698
   repos:
     - openshift-eng/ai-helpers
 
@@ -21,6 +22,11 @@ substeps:
     type: action
     group: ai-setup
     summary: "Install the ai-helpers plugin marketplace"
+
+  - id: gopls-workaround
+    type: action
+    group: ai-setup
+    summary: "Disable gopls in repos where it leaks file descriptors"
 
   - id: chai-bot-intro
     type: action
@@ -111,6 +117,72 @@ workflow (Step 9).
 Some repositories pre-configure plugins in their
 `.claude/settings.json` — these are installed
 automatically when you open Claude Code in that repo.
+
+---
+
+## Substep: gopls-workaround
+
+### Context
+
+The `golang@ai-helpers` plugin you just installed includes
+a dependency on the `gopls-lsp` plugin, which runs a
+`gopls mcp` process in the background for Go language
+intelligence (code completion, go-to-definition, etc.).
+
+There is a
+[known bug in gopls](https://github.com/golang/go/issues/71698)
+that causes it to leak file descriptors — opening 60,000+
+files in directories it should ignore (such as
+`node_modules`). This can exhaust your system's file
+descriptor limit and degrade performance.
+
+Two TRT repositories are affected:
+
+**openshift/release** — This is a YAML configuration
+repository, not a Go project. It contains only ~40 Go
+files out of 54,000+ YAML files. gopls provides no value
+here and wastes resources indexing the entire repo.
+
+**openshift/sippy** — This is a real Go project where
+gopls would be useful, but the bug causes it to index
+~121,000 files in `sippy-ng/node_modules` despite a
+default filter that should exclude them.
+
+The fix is to disable the gopls plugin per-project using
+`.claude/settings.local.json`, which is git-ignored so
+the change stays local to your machine. This does **not**
+disable the Go development tools provided by the
+`golang@ai-helpers` plugin itself (linting, formatting,
+CVE patching) — only the LSP-based gopls background
+process.
+
+### Action
+
+For each affected repo, add `enabledPlugins` to
+`.claude/settings.local.json`:
+
+- In `openshift/release`:
+  Open `.claude/settings.local.json` (create it if it
+  doesn't exist) and add:
+  ```json
+  {
+    "enabledPlugins": {
+      "gopls-lsp@claude-plugins-official": false
+    }
+  }
+  ```
+  If the file already has content, merge the
+  `enabledPlugins` key into the existing JSON object.
+
+- In `openshift/sippy`:
+  Same change — add `enabledPlugins` with
+  `gopls-lsp@claude-plugins-official` set to `false` in
+  `.claude/settings.local.json`.
+
+- Restart Claude Code after making these changes.
+
+This workaround can be removed once the upstream gopls
+bug is fixed.
 
 ---
 
@@ -256,6 +328,9 @@ Verify your AI tools are set up and working:
 - Sippy Chat:
   https://sippy-auth.dptools.openshift.org/sippy-ng/chat
   (verified: 2026-06-08)
+- gopls file descriptor leak bug:
+  https://github.com/golang/go/issues/71698
+  (verified: 2026-06-09)
 
 ## Feedback
 
