@@ -137,3 +137,86 @@ A CI job that runs weekly to check all claims.
 Not chosen because: onboarding is a rare event. The same
 verification happens naturally as a pre-step of each
 onboarding, triggered by a real event rather than a timer.
+
+## Future Direction: Continuous Documentation Maintenance
+
+### The broader problem
+
+Onboarding is a rare event. The harder, more persistent
+problem is documentation drift — docs go stale because
+humans don't maintain them. TRT's repos, processes,
+component ownership, and workflows change constantly.
+Documentation that was accurate three months ago may be
+misleading today, and nobody notices until someone relies
+on it.
+
+### Agent-maintained documentation
+
+The onboarding guide's design — structured markdown,
+machine-readable claims, AI pre-review against live
+sources — is a prototype of a more general pattern:
+agents that continuously monitor team activity and propose
+documentation updates.
+
+A documentation maintenance agent would:
+
+- Review recent PRs, Jira activity, Slack discussions,
+  and org config changes on a regular schedule
+- Compare what happened against what's documented
+- Propose targeted updates via PR when it detects drift,
+  gaps, or stale content
+- Use the same claims system to verify that references
+  remain valid
+
+This shifts documentation from a human discipline
+("remember to update the docs") to an agent-assisted
+workflow ("review and merge the agent's proposed update").
+
+### How the current design supports this
+
+Several decisions made for the onboarding guide were
+chosen specifically because they generalize:
+
+- **Directory-per-topic structure.** The onboarding guide
+  lives under `onboarding/`. Other document types —
+  runbooks, process docs, architecture references — can
+  sit alongside it in sibling directories, each with their
+  own manifest and content files.
+
+- **The manifest as the agent's API.** The manifest
+  declares what the document covers, how it's structured,
+  what claims it makes, and what quality criteria apply.
+  A documentation agent can discover manifests across the
+  repo and use them to understand what each document is
+  and how to review it.
+
+- **Claims are document-agnostic.** The claims system
+  (verifiable references to URLs, repos, channels, tools)
+  works for any document type, not just onboarding steps.
+
+- **Bot instructions can split.** Currently
+  `BOT_INSTRUCTIONS.md` is onboarding-specific. When a
+  second document type is added, repo-wide conventions
+  can move to a root-level file, with per-directory
+  instructions covering document-specific behavior.
+
+- **The pre-review is a review spec.** Step 00's prompt
+  defines exactly how to audit the onboarding guide
+  against live sources. The same pattern — "cross-reference
+  this document against these data sources, flag drift and
+  gaps" — applies to any document. Each manifest could
+  include its own review instructions.
+
+### What changes when we get there
+
+The current pre-review runs on-demand when a buddy triggers
+it. The next step is making it scheduled — a Chai Bot task
+that runs periodically, reviews all manifests in the repo,
+and opens PRs for detected drift. This does not require
+structural changes to the repo; it requires a scheduled
+task configuration pointing at this repo.
+
+The structural decisions above mean a second document type
+can be added by creating a new directory with its own
+manifest and content files, following the same patterns.
+No refactoring of the existing onboarding guide is needed.
