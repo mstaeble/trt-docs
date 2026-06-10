@@ -34,7 +34,7 @@ You can also open PRs directly:
    added or removed any channels, URLs, repos, or tools
 4. Update the  date on any Known References you
    confirmed
-5. Open a PR — CODEOWNERS will assign reviewers
+5. Open a PR — the OWNERS file will assign reviewers
 
 ## Step File Structure
 
