@@ -7,7 +7,8 @@ audience: buddy
 claims:
   channels: []
   urls: []
-  repos: []
+  repos:
+    - https://gitlab.cee.redhat.com/hybrid-platforms/org
   tools: []
 ---
 
@@ -67,6 +68,32 @@ Start a Chai Bot DM thread and paste:
 >    c. Look for new team practices, tools, or workflows
 >       that have been adopted since the guide was last
 >       updated
+> 6. Cross-reference against the org configuration repo:
+>    a. Clone gitlab.cee.redhat.com/hybrid-platforms/org
+>    b. Read TRT's team config at
+>       config/structures/hybrid_platforms/mpex/teams/
+>       technical_release_team.yaml
+>    c. Use the org config as an authoritative source for
+>       TRT's current scope — repos, component ownership,
+>       Jira projects, Slack channels, team resources,
+>       and org hierarchy
+>    d. Assess whether the guide's coverage matches TRT's
+>       actual scope:
+>       - Are TRT-owned repos described accurately — not
+>         just mentioned, but with correct descriptions
+>         of what they are and how TRT uses them?
+>       - Does the guide reflect TRT's component ownership
+>         responsibilities (Component Readiness, Sippy,
+>         payload-tests, test framework)?
+>       - Are team resources (charter, office hours,
+>         architecture call, contact page) covered and
+>         current?
+>       - Does the guide's description of TRT's place in
+>         the org match the hierarchy in the config?
+>    e. Identify content that is missing, stale, or
+>       inconsistent with the org config — not just
+>       missing links, but missing context about what
+>       TRT owns and does
 >
 > Produce a report with four sections:
 > - ✅ Verified — claims and content that match live state
