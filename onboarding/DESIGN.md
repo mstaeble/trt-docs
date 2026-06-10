@@ -26,7 +26,7 @@ files with structured YAML front matter. This provides:
 
 - PR-based review for every change
 - Audit trail of what changed and why
-- CODEOWNERS enforcement for approvals
+- Prow OWNERS enforcement for approvals
 - Supporting artifacts (scripts, configs) alongside docs
 
 ### One step per Slack thread
