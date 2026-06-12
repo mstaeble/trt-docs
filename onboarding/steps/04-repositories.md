@@ -308,9 +308,9 @@ reviews it.
 
 Note: `ci-test-mapping` is in the `openshift-eng` GitHub
 organization, which requires separate org membership from
-the `openshift` org. Your onboarding buddy should have
-arranged this access in Step 0. If you can't access the
-repo, see the access note at the end of this step.
+the `openshift` org. You requested access to both orgs in
+Step 2. If you haven't yet, see the github-access substep
+in Step 2.
 
 ---
 
