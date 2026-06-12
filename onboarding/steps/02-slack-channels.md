@@ -17,6 +17,7 @@ claims:
     - forum-ocp-release
   urls:
     - https://issues.redhat.com/secure/RapidBoard.jspa?rapidView=5922&projectKey=TRT
+    - https://devservices.dpp.openshift.com/support/github_access_request/
   repos:
     - openshift/continuous-release-jobs
     - openshift/release
@@ -50,6 +51,10 @@ substeps:
   - id: awareness-channels
     type: learning
     summary: "Learn about announcement and ad-hoc channels"
+
+  - id: github-access
+    type: action
+    summary: "Request membership in the openshift GitHub organizations"
 
   - id: verify-access
     type: action
@@ -320,6 +325,50 @@ during triage.
 
 ---
 
+## Substep: github-access
+
+### Context
+
+TRT's repositories are spread across two GitHub
+organizations:
+
+- **openshift** — The primary org containing origin,
+  release, sippy, ci-tools, and most OpenShift repos
+- **openshift-eng** — Contains ci-test-mapping and other
+  engineering-internal repos
+
+You need membership in both orgs to access private
+repositories, review PRs, and use the OWNERS system
+(covered in Step 4).
+
+Before requesting org membership, your GitHub account
+must meet Red Hat's requirements: the company field must
+be set to "Red Hat" and two-factor authentication (2FA)
+must be enabled. Org membership requests will be rejected
+if these are not in place.
+
+### Action
+
+- If you don't have a GitHub account, create one at
+  https://github.com/join
+- Ensure your GitHub profile has **"Red Hat"** as the
+  company:
+  go to https://github.com/settings/profile and set the
+  Company field to "Red Hat"
+- Ensure two-factor authentication (2FA) is enabled:
+  go to https://github.com/settings/security and enable
+  2FA if it is not already on
+- Connect to the Red Hat VPN (the request form is
+  internal-only)
+- Go to the
+  [GitHub Access Request](https://devservices.dpp.openshift.com/support/github_access_request/)
+  page and submit a request for the **openshift** org
+- Submit a separate request for the **openshift-eng** org
+- Approval may take up to one business day — continue
+  with the next substeps while you wait
+
+---
+
 ## Substep: verify-access
 
 ### Context
@@ -338,6 +387,12 @@ follow up.
   [trt-sippy-postgresql](https://rover.redhat.com/groups/group/trt-sippy-postgresql)
 - Verify you are in Google Group:
   [openshift-technical-release-staff](https://groups.google.com/a/redhat.com/g/openshift-technical-release-staff/about)
+- Verify you are a member of the
+  [openshift](https://github.com/openshift) GitHub
+  organization
+- Verify you are a member of the
+  [openshift-eng](https://github.com/openshift-eng) GitHub
+  organization
 
 ---
 
@@ -357,6 +412,8 @@ Confirm you have joined or been added to:
 - Rover group: openshift-technical-release-team
 - Rover group: trt-sippy-postgresql
 - Google Group: openshift-technical-release-staff
+- Member of the openshift GitHub organization
+- Member of the openshift-eng GitHub organization
 - Created your onboarding tracking ticket in the TRT
   Jira project
 
@@ -389,6 +446,14 @@ Confirm you have joined or been added to:
   (verified: 2026-06-05)
 - Rover group: trt-sippy-postgresql
   (verified: 2026-06-05)
+
+- GitHub Access Request (VPN required):
+  https://devservices.dpp.openshift.com/support/github_access_request/
+  (verified: 2026-06-12)
+- openshift GitHub org: https://github.com/openshift
+  (verified: 2026-06-12)
+- openshift-eng GitHub org: https://github.com/openshift-eng
+  (verified: 2026-06-12)
 
 ## Feedback
 
